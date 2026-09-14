@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biểu mẫu liên hệ, phản hồi ý kiến và đăng ký đặt mua giáo trình trực tuyến tại nhà sách sinh viên BookNest - Khoa Toán Tin, Trường ĐH Sư phạm - ĐH Đà Nẵng.">
+  <title>Liên hệ và Đặt mua giáo trình | BookNest</title>
+</head>
+<body>
+
+  <header>
+    <p>
+      <img src="images/logo-booknest.png" alt="Logo BookNest - Nhà sách trực tuyến UED" width="250" height="80">
+    </p>
+    <p><strong>BookNest</strong> - Tri thức nâng bước tương lai, người bạn đồng hành của sinh viên Sư phạm</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="danh-sach.html">Danh mục sách</a></li>
+      <li><a href="chi-tiet.html">Sách tiêu biểu</a></li>
+      <li><a href="gioi-thieu.html">Giới thiệu nhóm</a></li>
+      <li><a href="lien-he.html">Liên hệ đặt sách</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Biểu mẫu liên hệ và Đăng ký đặt mua giáo trình</h1>
+
+    <section>
+      <h2>Thông tin liên hệ trực tiếp của ban quản trị BookNest</h2>
+      <p>Nếu bạn cần tư vấn nhanh về tình trạng sách hoặc hỗ trợ đặt sách theo tập thể lớp, vui lòng liên hệ:</p>
+      <ul>
+        <li><strong>Văn phòng đại diện:</strong> Phòng 204, Nhà A4 &mdash; Khoa Toán &ndash; Tin, Trường Đại học Sư phạm &ndash; Đại học Đà Nẵng.</li>
+        <li><strong>Địa chỉ trường:</strong> Số 459 Tôn Đức Thắng, Phường Hòa Khánh Nam, Quận Liên Chiểu, Thành phố Đà Nẵng.</li>
+        <li><strong>Hotline sinh viên:</strong> 0905.123.456 (Hỗ trợ từ 07:30 đến 17:30 các ngày trong tuần).</li>
+        <li><strong>Email ban quản trị:</strong> <a href="mailto:booknest.ued@gmail.com">booknest.ued@gmail.com</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Gửi phiếu đăng ký thông tin hoặc góp ý</h2>
+      <p>Vui lòng điền đầy đủ các trường thông tin có đánh dấu sao (*) dưới đây. Trình duyệt sẽ tự động kiểm tra định dạng dữ liệu trước khi gửi phiếu:</p>
+
+      <form action="#" method="post">
+        
+        <fieldset>
+          <legend>Thông tin cá nhân người liên hệ</legend>
+          
+          <p>
+            <label for="ho-ten">Họ và tên sinh viên / quý độc giả (*):</label><br>
+            <input type="text" id="ho-ten" name="ho_ten" required minlength="3" maxlength="50" placeholder="Ví dụ: Nguyễn Văn An">
+          </p>
+
+          <p>
+            <label for="ma-sinh-vien">Mã số sinh viên (nếu là sinh viên UED):</label><br>
+            <input type="text" id="ma-sinh-vien" name="ma_sinh_vien" pattern="[0-9]{10}" placeholder="Gồm 10 chữ số, ví dụ: 3120224189">
+          </p>
+
+          <p>
+            <label for="email-lien-he">Địa chỉ Email nhận phản hồi (*):</label><br>
+            <input type="email" id="email-lien-he" name="email_lien_he" required placeholder="nhapemail@ued.udn.vn">
+          </p>
+
+          <p>
+            <label for="so-dien-thoai">Số điện thoại di động (*):</label><br>
+            <input type="tel" id="so-dien-thoai" name="so_dien_thoai" required pattern="0[0-9]{9}" placeholder="Gồm 10 số bắt đầu bằng 0, ví dụ: 0905123456">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Nội dung đăng ký giáo trình hoặc yêu cầu hỗ trợ</legend>
+
+          <p>
+            <label for="muc-dich">Mục đích gửi thông tin (*):</label><br>
+            <select id="muc-dich" name="muc_dich" required>
+              <option value="">-- Vui lòng chọn mục đích --</option>
+              <option value="dat-sach-ca-nhan">Đăng ký đặt mua giáo trình cá nhân</option>
+              <option value="dat-sach-tap-the">Đăng ký đặt sách số lượng lớn theo lớp</option>
+              <option value="ky-gui-sach">Đăng ký trao đổi, ký gửi giáo trình cũ</option>
+              <option value="gop-y-phan-hoi">Góp ý nâng cao chất lượng dịch vụ website</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="chon-giao-trinh">Giáo trình quan tâm chính:</label><br>
+            <select id="chon-giao-trinh" name="chon_giao_trinh">
+              <option value="none">-- Chọn giáo trình (nếu có nhu cầu) --</option>
+              <option value="IT-WEB-01">Lập trình Web hiện đại với HTML5, CSS3 và PHP (96.000 VNĐ)</option>
+              <option value="IT-DSA-02">Cấu trúc dữ liệu và Giải thuật ứng dụng (116.000 VNĐ)</option>
+              <option value="IT-DB-03">Hệ quản trị Cơ sở dữ liệu và Ngôn ngữ SQL (88.000 VNĐ)</option>
+              <option value="IT-NET-04">Mạng máy tính căn bản và Kiến trúc TCP/IP (102.000 VNĐ)</option>
+              <option value="MATH-CAL-01">Giải tích cổ điển 1 (75.000 VNĐ)</option>
+              <option value="MATH-ALG-02">Đại số tuyến tính và Hình học giải tích (82.000 VNĐ)</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="so-luong">Số lượng sách dự kiến mua (từ 1 đến 50 cuốn) (*):</label><br>
+            <input type="number" id="so-luong" name="so_luong" required min="1" max="50" value="1">
+          </p>
+
+          <p>
+            <label for="ngay-nhan">Ngày dự kiến muốn nhận sách (*):</label><br>
+            <input type="date" id="ngay-nhan" name="ngay_nhan" required min="2026-09-15" max="2026-12-31">
+          </p>
+
+          <fieldset>
+            <legend>Phương thức nhận hàng mong muốn (*)</legend>
+            <p>
+              <input type="radio" id="nhan-tai-khoa" name="phuong_thuc_nhan" value="tai_khoa" required checked>
+              <label for="nhan-tai-khoa">Nhận trực tiếp tại Văn phòng Khoa Toán - Tin (Miễn phí)</label>
+            </p>
+            <p>
+              <input type="radio" id="nhan-tai-ktx" name="phuong_thuc_nhan" value="tai_ktx">
+              <label for="nhan-tai-ktx">Giao tận nơi Ký túc xá sinh viên UED (Phụ thu 10.000 VNĐ)</label>
+            </p>
+          </fieldset>
+
+          <p>
+            <label for="noi-dung-ghi-chu">Ghi chú thêm hoặc nội dung góp ý chi tiết:</label><br>
+            <textarea id="noi-dung-ghi-chu" name="noi_dung_ghi_chu" rows="5" cols="50" placeholder="Nhập ghi chú thời gian nhận sách thuận tiện hoặc câu hỏi cần giải đáp..."></textarea>
+          </p>
+
+          <p>
+            <input type="checkbox" id="dong-y-dieu-khoan" name="dong_y_dieu_khoan" required>
+            <label for="dong-y-dieu-khoan">Tôi cam kết thông tin cung cấp ở trên là chính xác (*)</label>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Gửi phiếu đăng ký</button>
+          <button type="reset">Nhập lại thông tin</button>
+        </p>
+
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; 2026 Nhóm 12 (Lớp 24CNTT3) &mdash; Khoa Toán &ndash; Tin, Trường Đại học Sư phạm &ndash; Đại học Đà Nẵng.</p>
+    <p>Dự án phục vụ học phần Thiết kế và Lập trình web. Địa chỉ liên hệ: 459 Tôn Đức Thắng, Quận Liên Chiểu, TP. Đà Nẵng.</p>
+  </footer>
+
+</body>
+</html>
