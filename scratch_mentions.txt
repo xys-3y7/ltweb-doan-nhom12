@@ -1,0 +1,9 @@
+P[8]: Tiếp nối khảo sát từ Bài tập 1, Nhóm 12 sử dụng cổng thông tin chính thức của Trường Đại học Sư phạm – Đại học Đà Nẵng (https://ued.udn.vn/) để phân tích chuyên sâu mã nguồn HTML5, cấu trúc ngữ nghĩa và khả năng tiếp cận.
+P[41]: Nhóm 12 đã xây dựng bộ khung HTML tĩnh gồm 5 trang hoàn chỉnh cho đồ án BookNest. Toàn bộ mã nguồn sử dụng 100% thẻ ngữ nghĩa HTML5 thuần túy (chưa dùng CSS/JS), nội dung thật 100%, 0 lỗi W3C Validator và điểm Lighthouse a11y, SEO đạt 100/100.
+P[54]: PHẦN C – TRANG GIỚI THIỆU CÁ NHÂN CỦA TỪNG THÀNH VIÊN
+P[55]: Mỗi thành viên trong Nhóm 12 đã hoàn thành trang web cá nhân trong thư mục thanhvien/<ten-thanh-vien>/gioithieu.html, có ảnh chân dung kèm alt, bảng thời khóa biểu tuần chuẩn caption/thead/th scope, và thiết lập liên kết hai chiều hoạt động chính xác.
+P[56]: 3.1. Bảng 2 – Kết quả thực hiện Phần C của từng thành viên
+P[59]: Chiều đi: Từ gioi-thieu.html trỏ tới từng thành viên qua cú pháp href="thanhvien/xaiyasith_yoi/gioithieu.html".
+P[62]: (Hình 7: Minh chứng đóng góp cá nhân và lịch sử commit của 3 thành viên trên kho GitHub)
+P[80]: Bảng phân công chi tiết và mức độ đóng góp thực tế của các thành viên Nhóm 12:
+P[82]: Nhóm 12 (Lớp 24CNTT3) xin cam kết: Toàn bộ mã nguồn và báo cáo được thực hiện bởi sự nghiên cứu độc lập của nhóm, không sao chép từ bất kỳ nguồn nào khác. Nhóm có sử dụng công cụ AI (Google Gemini / Antigravity) để hỗ trợ tra cứu chuẩn quy cách W3C và kiểm tra lỗi cú pháp; toàn bộ nội dung phân tích và mã nguồn đã được các thành viên trực tiếp kiểm chứng và chịu hoàn toàn trách nhiệm trước giảng viên.

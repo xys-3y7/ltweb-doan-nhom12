@@ -1,0 +1,130 @@
+=== PARAGRAPHS ===
+P[0]: TRƯỜNG ĐẠI HỌC SƯ PHẠM – ĐẠI HỌC ĐÀ NẴNG
+KHOA TOÁN – TIN
+P[1]: HỌC PHẦN: THIẾT KẾ VÀ LẬP TRÌNH WEB (HỌC KỲ 1, NĂM HỌC 2026 – 2027)
+P[2]: BÁO CÁO BÀI TẬP THỰC HÀNH NHÓM SỐ 2
+CHƯƠNG 2: HTML5 – NGỮ NGHĨA VÀ KIỂM CHUẨN TRANG WEB
+P[3]: Đề tài: Phân tích cấu trúc HTML website ued.udn.vn và dựng bộ khung HTML5 ngữ nghĩa cho website đồ án "BookNest"
+P[4]: /
+P[5]: ĐÀ NẴNG, THÁNG 09 NĂM 2026
+P[7]: PHẦN A – MỔ XẺ CẤU TRÚC HTML CỦA MỘT WEBSITE THỰC TẾ (UED.UDN.VN)
+P[8]: Tiếp nối khảo sát từ Bài tập 1, Nhóm 12 sử dụng cổng thông tin chính thức của Trường Đại học Sư phạm – Đại học Đà Nẵng (https://ued.udn.vn/) để phân tích chuyên sâu mã nguồn HTML5, cấu trúc ngữ nghĩa và khả năng tiếp cận.
+P[9]: 1.1. Khảo sát bố cục ngữ nghĩa và sơ đồ khối trang chủ
+P[10]: Qua quan sát bằng Chrome DevTools (F12 > Elements), website được xây dựng bằng WordPress kết hợp theme Flatsome. Mặc dù có sử dụng các thẻ khối lớn cấp cao như <header>, <main>, <footer>, trang chủ mắc phải lỗi "Div Soup" nghiêm trọng khi lồng quá nhiều lớp div vô nghĩa bên trong:
+P[11]: Vùng điều hướng chính: Các mục menu được đặt trong danh sách ul li nhưng KHÔNG được bọc bởi thẻ ngữ nghĩa <nav>. Trình đọc màn hình (Screen Reader) không nhận diện được đây là Navigation Landmark.
+P[12]: Khu vực bài viết tin tức: Các bản tin tuyển sinh và thông báo được chứa trong các thẻ <div class="col post-item"> thay vì thẻ <article> độc lập, tự chứa.
+P[13]: Cột phụ trợ: Các tiện ích thanh bên không dùng thẻ <aside>.
+P[15]: (Hình 1: Sơ đồ đối chiếu cấu trúc khối ngữ nghĩa chuẩn HTML5 và thực tế tại ued.udn.vn)
+P[16]: 1.2. Phân tích cây tiêu đề (Headings Hierarchy)
+P[17]: Kiểm tra trực tiếp mã nguồn trang chủ bằng công cụ HeadingsMap cho thấy cây tiêu đề vi phạm nghiêm trọng các quy tắc tiếp cận web:
+P[18]: Thiếu hoàn toàn thẻ <h1> (0 thẻ h1): Trang chủ không có bất kỳ thẻ <h1> nào. Điều này làm mất đi tiêu đề bao quát nội dung của toàn trang, ảnh hưởng tiêu cực tới chỉ số SEO on-page của Googlebot.
+P[19]: Hiện tượng nhảy cấp (Heading Level Skipping): Trang bắt đầu bằng các thẻ <h3> ở topbar trên cùng (Viên chức, Người học, Lịch tuần), sau đó mới tới <h2> ở các section (NHẬN DIỆN UED, THÔNG TIN TUYỂN SINH). Thứ bậc bị đảo lộn khiến người khiếm thị sử dụng phím tắt H hoặc 1-6 trên trình đọc màn hình NVDA bị mất phương hướng hoàn toàn.
+P[20]: 1.3. Phân tích siêu dữ liệu vùng <head>
+P[21]: Vùng <head> của website có chứa các thẻ cơ bản và thẻ Open Graph:
+P[22]: meta charset="UTF-8": Được đặt ngay đầu, đảm bảo hiển thị hoàn hảo bảng mã tiếng Việt.
+P[23]: meta name="viewport": width=device-width, initial-scale=1 — Đạt chuẩn hiển thị trên thiết bị di động.
+P[24]: title: Độ dài 35 ký tự ("UED - Trường Đại học Sư phạm (UED)") — Nằm trong khoảng khuyến nghị tối ưu < 60 ký tự.
+P[25]: meta description: Độ dài 168 ký tự — Vượt nhẹ mức chuẩn tối ưu (~155 ký tự), các ký tự cuối có thể bị công cụ tìm kiếm cắt bớt dấu ba chấm.
+P[27]: (Hình 2: Trích xuất mã nguồn vùng <head> và phân tích độ dài title / description của ued.udn.vn)
+P[28]: 1.4. Phân tích biểu mẫu tìm kiếm (Search Form)
+P[29]: Trang chủ sử dụng một form tìm kiếm <form method="get" action="https://ued.udn.vn/" role="search">:
+P[30]: Điểm tốt: Dùng đúng method="get", kiểu input type="search" ngữ nghĩa, nút submit có aria-label="Gửi".
+P[31]: Điểm chưa tốt (Hạn chế): Ô nhập liệu id="s" hoàn toàn thiếu thẻ <label for="s"> liên kết, chỉ dựa vào placeholder. Theo chuẩn WCAG 2.1, placeholder không thể thay thế nhãn vì nó sẽ biến mất khi người dùng gõ phím. Ngoài ra, form thiếu hoàn toàn thuộc tính kiểm tra dữ liệu phía trình duyệt (required, minlength).
+P[32]: 1.5. Kết quả kiểm chuẩn W3C Validator, Lighthouse và Giải pháp sửa lỗi
+P[33]: Kiểm nghiệm thực tế vào lúc 14:30 ngày 13/09/2026 trên ued.udn.vn:
+P[35]: (Hình 3: Kết quả kiểm tra W3C Validator và điểm số Google Lighthouse trên ued.udn.vn)
+P[36]: Giải thích 02 lỗi tiêu biểu và giải pháp sửa:
+P[37]: 1. Lỗi thiếu thẻ <h1>: Do theme dùng thẻ ảnh thuần túy ở logo. Sửa bằng cách bọc logo trong thẻ <h1 class="site-title"><a href="/"><img src="logo.png" alt="Trường Đại học Sư phạm - ĐHĐN"></a></h1>, chuyển các thẻ <h3> trên thanh topbar thành thẻ <span> hoặc <p>.
+P[38]: 2. Lỗi ô input tìm kiếm thiếu thẻ <label>: Do ô <input id="s"> chỉ có placeholder="Search...". Sửa bằng cách thêm thẻ <label for="s" class="visually-hidden">Tìm kiếm:</label> để trình đọc màn hình thông báo rõ ràng mục đích nhập liệu.
+P[40]: PHẦN B – DỰNG BỘ KHUNG HTML5 CHO WEBSITE ĐỒ ÁN (BOOKNEST)
+P[41]: Nhóm 12 đã xây dựng bộ khung HTML tĩnh gồm 5 trang hoàn chỉnh cho đồ án BookNest. Toàn bộ mã nguồn sử dụng 100% thẻ ngữ nghĩa HTML5 thuần túy (chưa dùng CSS/JS), nội dung thật 100%, 0 lỗi W3C Validator và điểm Lighthouse a11y, SEO đạt 100/100.
+P[42]: 2.1. Giới thiệu tổng quan và sơ đồ kiến trúc 5 trang web
+P[43]: Hệ thống website BookNest phục vụ sinh viên tìm kiếm, xem chi tiết và đăng ký đặt mua giáo trình chuyên ngành và văn phòng phẩm:
+P[45]: (Hình 4: Sơ đồ cấu trúc cây trang web và liên kết điều hướng nội bộ của BookNest)
+P[46]: 2.2. Bảng 1 – Năm trang tối thiểu của bộ khung đồ án BookNest
+P[48]: (Hình 5: Minh chứng 5 trang web HTML5 ngữ nghĩa của BookNest khi mở trên trình duyệt)
+P[49]: 2.3. Bảng tổng hợp kết quả kiểm chuẩn chất lượng 5 trang đồ án
+P[50]: Toàn bộ 5 trang web đã được xuất bản trực tiếp lên GitHub Pages và chạy kiểm thử qua W3C Validator và Lighthouse:
+P[52]: (Hình 6: Bằng chứng kết quả kiểm chuẩn 0 lỗi W3C và điểm số Lighthouse 100/100 tuyệt đối của BookNest)
+P[54]: PHẦN C – TRANG GIỚI THIỆU CÁ NHÂN CỦA TỪNG THÀNH VIÊN
+P[55]: Mỗi thành viên trong Nhóm 12 đã hoàn thành trang web cá nhân trong thư mục thanhvien/<ten-thanh-vien>/gioithieu.html, có ảnh chân dung kèm alt, bảng thời khóa biểu tuần chuẩn caption/thead/th scope, và thiết lập liên kết hai chiều hoạt động chính xác.
+P[56]: 3.1. Bảng 2 – Kết quả thực hiện Phần C của từng thành viên
+P[57]: 3.2. Cơ chế liên kết hai chiều tương đối
+P[58]: Toàn bộ đường dẫn được thiết lập bằng đường dẫn tương đối để tương thích hoàn toàn khi triển khai trên máy tính cục bộ cũng như trên GitHub Pages:
+P[59]: Chiều đi: Từ gioi-thieu.html trỏ tới từng thành viên qua cú pháp href="thanhvien/xaiyasith_yoi/gioithieu.html".
+P[60]: Chiều về: Từ trang cá nhân quay về trang chủ và trang nhóm qua cú pháp nhảy thư mục cha href="../../index.html" và href="../../gioi-thieu.html". 100% liên kết hoạt động tốt, 0 liên kết chết.
+P[62]: (Hình 7: Minh chứng đóng góp cá nhân và lịch sử commit của 4 thành viên trên kho GitHub)
+P[64]: PHẦN D – CÂU HỎI THẢO LUẬN
+P[65]: Câu 1: Trình duyệt hiển thị thẻ ngữ nghĩa và div giống hệt nhau — vậy thẻ ngữ nghĩa mang lại lợi ích gì cho SEO và người dùng trình đọc màn hình? Minh họa bằng chính website đã phân tích ở Phần A.
+P[66]: Mặc dù trình duyệt áp dụng cùng kiểu hiển thị mặc định (display: block) cho cả div và các thẻ ngữ nghĩa, nhưng thẻ ngữ nghĩa đóng vai trò sống còn trong việc xây dựng cây trợ năng (Accessibility Tree) và giúp máy tìm kiếm hiểu cấu trúc trang. Đối với trình đọc màn hình (Screen Reader) của người khiếm thị, các thẻ như <header>, <nav>, <main>, <footer> hoạt động như các mốc định vị (Landmarks). Người dùng chỉ cần nhấn phím tắt (như phím D trên NVDA) là có thể nhảy cóc thẳng qua thanh menu dài dằng dặc để vào đọc ngay nội dung chính trong <main>, thay vì phải nghe đọc lại từ đầu trang. Đối với SEO, Googlebot dựa vào <main> và <article> để phân biệt đâu là nội dung cốt lõi của bài viết và đâu là thành phần râu ria, từ đó lập chỉ mục chính xác hơn. Minh họa thực tế: Tại website ued.udn.vn đã phân tích ở Phần A, do thanh điều hướng menu không được bọc trong thẻ <nav> mà bị vùi dập trong nhiều lớp div, người khiếm thị hoàn toàn không nhận được thông báo "Navigation Landmark" khi duyệt web, khiến trải nghiệm sử dụng bị giảm sút nghiêm trọng.
+P[67]: Câu 2: Vì sao mỗi trang chỉ nên có một h1 và cây tiêu đề không nên nhảy cấp? Người dùng trình đọc màn hình duyệt trang bằng cây tiêu đề như thế nào khi cây này lộn xộn?
+P[68]: Mỗi trang web chỉ nên có duy nhất một thẻ <h1> vì <h1> đóng vai trò là "tựa đề của một cuốn sách", tóm lược chủ đề quan trọng nhất của toàn bộ tài liệu HTML. Cây tiêu đề từ <h1> đến <h6> phải phản ánh chính xác mục lục phân cấp nội dung logic và tuyệt đối không được nhảy cấp (ví dụ từ <h1> nhảy cóc thẳng xuống <h3>). Người dùng trình đọc màn hình thường không đọc toàn bộ trang từ trên xuống dưới mà sử dụng phím tắt duyệt nhanh: phím H để đi qua các tiêu đề kế tiếp, phím số từ 1 đến 6 để nhảy nhanh đến cấp tiêu đề tương ứng, hoặc mở hộp thoại danh sách tiêu đề (NVDA Key + F7) để quét nhanh mục lục trang web. Khi cây tiêu đề lộn xộn hoặc thiếu <h1> (như trang chủ ued.udn.vn bắt đầu bằng <h3> trên topbar rồi mới tới <h2>), người khiếm thị sẽ bị "lạc lối", lầm tưởng nội dung phụ là chủ đề chính và không thể nắm bắt được bố cục phân cấp thông tin của trang web.
+P[69]: Câu 3: Các thuộc tính required, pattern trên form của nhóm có thay thế được việc kiểm tra dữ liệu ở server không? Mô tả một cách cụ thể mà người dùng có thể vượt qua kiểm tra phía trình duyệt.
+P[70]: Các thuộc tính required, pattern, min, max trên form của nhóm HOÀN TOÀN KHÔNG THỂ thay thế việc kiểm tra dữ liệu ở máy chủ (Server-side validation). Kiểm tra phía trình duyệt (Client-side validation) chỉ đơn thuần phục vụ trải nghiệm người dùng (UX), giúp phản hồi tức thì để người dùng sửa lỗi mà không cần gửi request lên máy chủ. Tuy nhiên, phía máy khách hoàn toàn nằm dưới quyền kiểm soát của người dùng và kẻ tấn công. Người dùng có thể vượt qua kiểm tra này cực kỳ dễ dàng bằng ít nhất hai cách cụ thể: (1) Can thiệp trực tiếp vào DOM: Mở Chrome DevTools (nhấn F12), vào tab Elements, bấm chuột phải vào ô input và xóa bỏ thuộc tính required hoặc pattern, sau đó bấm Submit; trình duyệt sẽ gửi dữ liệu rác lên server mà không hề cảnh báo. (2) Gửi HTTP Request trực tiếp: Dùng công cụ như Postman, cURL hoặc mã script Python gửi trực tiếp một HTTP POST request chứa dữ liệu trống hoặc mã độc tới endpoint xử lý mà không cần thông qua giao diện trình duyệt. Do đó, máy chủ luôn luôn phải coi dữ liệu gửi lên là không an toàn và bắt buộc phải kiểm tra lại độc lập.
+P[71]: Câu 4: Ảnh thiếu alt gây ảnh hưởng cho ai, trong những tình huống nào? Khi nào nên dùng alt="" (rỗng) và vì sao không nên bỏ hẳn thuộc tính alt?
+P[72]: Thuộc tính alt (alternative text) cung cấp nội dung thay thế bằng văn bản cho hình ảnh. Ảnh thiếu alt ảnh hưởng tiêu cực trực tiếp đến người khiếm thị sử dụng trình đọc màn hình; ảnh hưởng đến người dùng có đường truyền mạng yếu hoặc trình duyệt tắt tính năng tải ảnh; và ảnh hưởng đến robot tìm kiếm của Google không thể nhận diện nội dung bức ảnh để xếp hạng Google Image Search. Dùng alt="" (rỗng) khi bức ảnh chỉ mang tính chất trang trí thuần túy (decorative image), như các đường kẻ phân cách, hoa văn nền, hoặc biểu tượng icon đặt cạnh một dòng chữ đã thể hiện đủ ý nghĩa. Khi gặp alt="", trình đọc màn hình sẽ thông minh bỏ qua bức ảnh, giúp người khiếm thị không bị làm phiền bởi những thông tin thừa. Tuyệt đối không được bỏ hẳn thuộc tính alt vì nếu bỏ quên hoàn toàn thuộc tính alt, trình đọc màn hình sẽ mặc định đọc to toàn bộ đường dẫn tập tin ảnh dài dằng dặc (ví dụ: "image slash uploads slash banner dot png"), gây ức chế tột cùng và làm gián đoạn trải nghiệm người dùng.
+P[74]: TÀI LIỆU THAM KHẢO
+P[75]: 1. J. N. Robbins (2018), Learning Web Design: A Beginner's Guide to HTML, CSS, JavaScript, and Web Graphics, 5th Edition, O'Reilly Media. (Chương 4: Creating a Simple Page; Chương 5: Marking Up Text; Chương 10: Forms).
+P[76]: 2. MDN Web Docs (2024), HTML elements reference & Semantic HTML guide, Mozilla Developer Network. [Trực tuyến]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element.
+P[77]: 3. World Wide Web Consortium (W3C) (2023), Web Content Accessibility Guidelines (WCAG) 2.1 – Guideline 1.3: Adaptable & Guideline 4.1: Compatible. [Trực tuyến]: https://www.w3.org/TR/WCAG21/.
+P[78]: 4. Google for Developers (2024), Learn Forms & Accessibility Best Practices, web.dev. [Trực tuyến]: https://web.dev/learn/forms.
+P[79]: PHỤ LỤC A – BẢNG PHÂN CÔNG CÔNG VIỆC VÀ TỰ ĐÁNH GIÁ
+P[80]: Bảng phân công chi tiết và mức độ đóng góp thực tế của các thành viên Nhóm 12:
+P[81]: CAM KẾT LIÊM CHÍNH HỌC THUẬT VÀ MINH BẠCH SỬ DỤNG AI
+P[82]: Nhóm 12 (Lớp 24CNTT3) xin cam kết: Toàn bộ mã nguồn và báo cáo được thực hiện bởi sự nghiên cứu độc lập của nhóm, không sao chép từ bất kỳ nguồn nào khác. Nhóm có sử dụng công cụ AI (Google Gemini / Antigravity) để hỗ trợ tra cứu chuẩn quy cách W3C và kiểm tra lỗi cú pháp; toàn bộ nội dung phân tích và mã nguồn đã được các thành viên trực tiếp kiểm chứng và chịu hoàn toàn trách nhiệm trước giảng viên.
+
+=== TABLES ===
+
+--- TABLE 0 (rows: 7, cols: 2) ---
+  Row 0: Mã nhóm & Lớp: | Nhóm 12 — Lớp sinh hoạt: 24CNTT3
+  Row 1: Tên đề tài đồ án: | BookNest – Website Bán Sách & Văn Phòng Phẩm Trực Tuyến
+  Row 2: Danh sách thành viên: | 1.Xaiyasith Yoi — MSV: 3120224189 (Nhóm trưởng) \n 2. Phommaket Haysady — MSV: 3120224181 (Thành viên) \n 3. Vongsena Sauphasith — MSV: 3120224186 (Thành viên) \n 4. Nguyễn Thị Sinh — MSV: 3120223169 (Thành viên)
+  Row 3: Giảng viên phụ trách: | TS. Nguyễn Hải Nam — Khoa Toán - Tin
+  Row 4: Kho lưu trữ GitHub: | https://github.com/xys-3y7/ltweb-doan-nhom12
+  Row 5: Địa chỉ GitHub Pages: | https://xys-3y7.github.io/ltweb-doan-nhom12/
+  Row 6: Mã commit cuối cùng: | a7c39f28e4b51d8a2307849c6901f4c3b52d918b
+
+--- TABLE 1 (rows: 6, cols: 3) ---
+  Row 0: Khu vực trang | Chuẩn ngữ nghĩa HTML5 | Thực tế tại ued.udn.vn
+  Row 1: Header & Nav | <header> chứa logo và <nav> điều hướng | <header> lồng nhiều div, thiếu thẻ <nav>
+  Row 2: Nội dung chính | <main> duy nhất chứa nội dung cốt lõi | Có thẻ <main id="main"> (Đạt chuẩn)
+  Row 3: Bài viết tin tức | <article> cho mỗi tin, kèm <time>, <p> | Dùng nhiều lớp <div class="post-item"> (Div Soup)
+  Row 4: Khối nội dung | <section> phân nhóm có <h2>/<h3> | Có sử dụng các thẻ <section class="section">
+  Row 5: Chân trang | <footer> chứa thông tin liên hệ, bản quyền | <footer id="footer"> (Đạt chuẩn ngữ nghĩa)
+
+--- TABLE 2 (rows: 5, cols: 4) ---
+  Row 0: Công cụ kiểm chuẩn | Chỉ số đo lường | Kết quả thực tế | Đánh giá chuẩn
+  Row 1: W3C Validator | Lỗi cú pháp (Errors) | 14 lỗi | Chưa đạt (Cần sửa)
+  Row 2: W3C Validator | Cảnh báo (Warnings) | 26 cảnh báo | Cần khắc phục
+  Row 3: Google Lighthouse | Accessibility (Tiếp cận) | 78 / 100 | Dưới chuẩn (< 90)
+  Row 4: Google Lighthouse | SEO (Tối ưu tìm kiếm) | 85 / 100 | Dưới chuẩn (< 90)
+
+--- TABLE 3 (rows: 6, cols: 5) ---
+  Row 0: TT | Tệp HTML | Nội dung chính | Thành phần bắt buộc | Người phụ trách
+  Row 1: 1 | index.html | Trang chủ: Tôn chỉ BookNest, banner ưu đãi, các đầu sách nổi bật | Khung chung; 1 thẻ h1; section; figure và img có alt | Xaiyasith Yoi \n (3120224189)
+  Row 2: 2 | danh-sach.html | Danh mục sách: Bảng giá giáo trình CNTT, Toán và văn phòng phẩm | Bảng dữ liệu có caption, thead, th scope; liên kết chi tiết | Phommaket Haysady \n (3120224181)
+  Row 3: 3 | chi-tiet.html | Chi tiết sách: Giáo trình Lập trình Web hiện đại (HTML5, CSS3, PHP) | article; figure + figcaption; bảng thông số; iframe có title | Xaiyasith Yoi \n (3120224189)
+  Row 4: 4 | gioi-thieu.html | Giới thiệu nhóm: Giới thiệu 4 thành viên và quy trình Git | Danh sách thành viên; liên kết tương đối 2 chiều tới trang cá nhân | Xaiyasith Yoi \n (3120224189)
+  Row 5: 5 | lien-he.html | Liên hệ & Đặt sách: Form đăng ký mua giáo trình theo lớp/cá nhân | form + fieldset/legend; >=5 controls thuộc >=4 kiểu input; đủ label | Vongsena Sauphasith \n (3120224186)
+
+--- TABLE 4 (rows: 6, cols: 5) ---
+  Row 0: Trang web | Đường dẫn trực tuyến (GitHub Pages) | Lỗi W3C | Điểm a11y | Điểm SEO
+  Row 1: Trang chủ (index.html) | https://xys-3y7.github.io/ltweb-doan-nhom12/index.html | 0 lỗi | 100 / 100 | 100 / 100
+  Row 2: Danh mục (danh-sach.html) | https://xys-3y7.github.io/ltweb-doan-nhom12/danh-sach.html | 0 lỗi | 100 / 100 | 100 / 100
+  Row 3: Chi tiết (chi-tiet.html) | https://xys-3y7.github.io/ltweb-doan-nhom12/chi-tiet.html | 0 lỗi | 100 / 100 | 100 / 100
+  Row 4: Giới thiệu (gioi-thieu.html) | https://xys-3y7.github.io/ltweb-doan-nhom12/gioi-thieu.html | 0 lỗi | 100 / 100 | 100 / 100
+  Row 5: Liên hệ (lien-he.html) | https://xys-3y7.github.io/ltweb-doan-nhom12/lien-he.html | 0 lỗi | 100 / 100 | 100 / 100
+
+--- TABLE 5 (rows: 5, cols: 6) ---
+  Row 0: TT | Họ và tên | Đường dẫn trang cá nhân | Lỗi W3C | Điểm a11y | Số commit
+  Row 1: 1 | Xaiyasith Yoi \n (3120224189) | thanhvien/xaiyasith_yoi/gioithieu.html | 0 lỗi | 100 | 5 commits
+  Row 2: 2 | Phommaket Haysady \n (3120224181) | thanhvien/phommaket_haysady/gioithieu.html | 0 lỗi | 100 | 4 commits
+  Row 3: 3 | Vongsena Sauphasith \n (3120224186) | thanhvien/vongsena_sauphasith/gioithieu.html | 0 lỗi | 100 | 4 commits
+  Row 4: 4 | Nguyễn Thị Sinh \n (3120223169) | thanhvien/nguyen_thi_sinh/gioithieu.html | 0 lỗi | 100 | 4 commits
+
+--- TABLE 6 (rows: 5, cols: 6) ---
+  Row 0: TT | Họ và tên | Mã SV | Tài khoản Git | Công việc đảm nhận | Đóng góp
+  Row 1: 1 | Xaiyasith Yoi | 3120224189 | @xys-3y7 | Nhóm trưởng; Phân tích ued.udn.vn; Code index.html, chi-tiet.html; Quản lý repo Git; Tổng hợp báo cáo | 100%
+  Row 2: 2 | Phommaket Haysady | 3120224181 | @haysady-it | Khảo sát vùng head, form ued; Code danh-sach.html với bảng dữ liệu ngữ nghĩa; Code trang cá nhân; Kiểm thử W3C | 100%
+  Row 3: 3 | Vongsena Sauphasith | 3120224186 | @sauphasith-ued | Code form liên hệ lien-he.html với validation; Code trang cá nhân; Thảo luận Phần D; Kiểm thử Lighthouse | 100%
+  Row 4: 4 | Nguyễn Thị Sinh | 3120223169 | @sinh-ued | Code trang cá nhân; Phối hợp thiết kế danh mục sách; Kiểm thử W3C và SEO | 100%
