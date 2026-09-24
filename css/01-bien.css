@@ -1,0 +1,59 @@
+/* ==========================================================================
+   01-bien.css — Khai báo biến CSS (Custom Properties)
+   Dự án: BookNest - Website Bán Sách & Văn Phòng Phẩm Trực Tuyến
+   Nhóm 12 - Lớp 24CNTT3 - Khoa Toán - Tin, ĐH Sư phạm - ĐH Đà Nẵng
+   ========================================================================== */
+
+:root {
+  /* Bảng màu chính (Color Palette) - Chuẩn tương phản WCAG AA >= 4.5:1 */
+  --mau-chinh: #123b6d;          /* Xanh Navy chủ đạo - Đậm đà, học thuật */
+  --mau-chinh-dam: #0a2240;      /* Xanh Navy đậm dùng cho header/footer */
+  --mau-chinh-nhat: #e8eef6;     /* Nền xanh nhạt tạo điểm nhấn nhẹ */
+  --mau-phu: #0284c7;            /* Xanh dương liên kết */
+  --mau-nhan: #d97706;           /* Màu hổ phách/cam ấm - Tương phản tốt */
+  --mau-nhan-hover: #b45309;     /* Trạng thái di chuột màu nhấn */
+  --mau-thanh-cong: #059669;     /* Xanh lá trạng thái còn hàng */
+  --mau-canh-bao: #dc2626;      /* Đỏ trạng thái hết hàng */
+
+  /* Màu chữ và nền */
+  --mau-chu: #1e293b;            /* Xanh đen than - Tương phản cực đại với nền trắng (12.6:1) */
+  --mau-chu-nhat: #475569;       /* Xám trung tính cho chú thích (5.4:1) */
+  --mau-chu-trang: #ffffff;      /* Chữ trắng trên nền tối */
+  --mau-nen: #f8fafc;            /* Nền tổng thể trang web */
+  --mau-nen-the: #ffffff;        /* Nền thẻ nội dung card */
+  --mau-vien: #cbd5e1;           /* Đường viền chuẩn */
+  --mau-vien-nhat: #e2e8f0;      /* Viền phân cách nhẹ */
+
+  /* Phông chữ và Typography */
+  --phong-chu: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --phong-ma-nguon: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --co-chu-nho: 0.875rem;        /* 14px */
+  --co-chu-chuan: 1rem;          /* 16px */
+  --co-chu-md: 1.125rem;         /* 18px */
+  --co-chu-lg: 1.25rem;          /* 20px */
+  --co-chu-xl: 1.5rem;           /* 24px */
+  --co-chu-xxl: 1.875rem;        /* 30px */
+  --chieu-cao-dong: 1.6;
+
+  /* Khoảng cách (Spacing) */
+  --khoang-cach-xs: 0.25rem;     /* 4px */
+  --khoang-cach-sm: 0.5rem;      /* 8px */
+  --khoang-cach: 1rem;           /* 16px */
+  --khoang-cach-md: 1.5rem;      /* 24px */
+  --khoang-cach-lg: 2rem;        /* 32px */
+  --khoang-cach-xl: 3rem;        /* 48px */
+
+  /* Bo góc (Border Radius) */
+  --bo-goc-sm: 4px;
+  --bo-goc: 8px;
+  --bo-goc-lg: 12px;
+  --bo-goc-tron: 9999px;
+
+  /* Bóng đổ (Box Shadow) */
+  --bong-do-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --bong-do: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --bong-do-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+
+  /* Hiệu ứng chuyển động (Transition) <= 0.3s theo yêu cầu */
+  --chuyen-dong: all 0.25s ease-in-out;
+}

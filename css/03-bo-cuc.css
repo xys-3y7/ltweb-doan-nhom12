@@ -1,0 +1,227 @@
+/* ==========================================================================
+   03-bo-cuc.css — Bố cục khung trang (CSS Grid & Mobile-First)
+   Dự án: BookNest - Website Bán Sách & Văn Phòng Phẩm Trực Tuyến
+   ========================================================================== */
+
+/* 1. Khung chứa tổng thể (Container) */
+.khung-chua {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--khoang-cach);
+  padding-right: var(--khoang-cach);
+}
+
+/* 2. Khung trang chính bằng CSS Grid (Mobile-First) */
+.trang-grid {
+  display: grid;
+  min-height: 100vh;
+  gap: var(--khoang-cach);
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "dau"
+    "menu"
+    "chinh"
+    "chan";
+}
+
+/* Biến thể trang có cột phụ aside (như chi-tiet.html) */
+.trang-grid--co-aside {
+  grid-template-areas:
+    "dau"
+    "menu"
+    "chinh"
+    "ben"
+    "chan";
+}
+
+/* Ánh xạ các khu vực ngữ nghĩa vào Grid Areas */
+header.phan-dau     { grid-area: dau;   }
+nav.thanh-dieu-huong { grid-area: menu;  }
+main.noi-dung-chinh  { grid-area: chinh; }
+aside.cot-phu        { grid-area: ben;   }
+footer.phan-chan     { grid-area: chan;  }
+
+/* 3. Chi tiết bố cục Phần đầu (Header) */
+header.phan-dau {
+  background: linear-gradient(135deg, var(--mau-chinh) 0%, var(--mau-chinh-dam) 100%);
+  color: var(--mau-chu-trang);
+  padding: var(--khoang-cach) 0;
+  box-shadow: var(--bong-do);
+}
+
+.phan-dau__khung {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--khoang-cach-sm);
+}
+
+.phan-dau__logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.phan-dau__khau-hieu {
+  margin: 0;
+  font-size: var(--co-chu-nho);
+  color: var(--mau-chinh-nhat);
+  opacity: 0.95;
+}
+
+/* 4. Thanh điều hướng (Navigation) */
+nav.thanh-dieu-huong {
+  background-color: var(--mau-chinh-dam);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--bong-do-sm);
+}
+
+nav.thanh-dieu-huong ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Mobile: xếp dọc */
+  width: 100%;
+}
+
+nav.thanh-dieu-huong li {
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav.thanh-dieu-huong a {
+  display: block;
+  padding: var(--khoang-cach-sm) var(--khoang-cach);
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--co-chu-md);
+  transition: var(--chuyen-dong);
+}
+
+nav.thanh-dieu-huong a:hover,
+nav.thanh-dieu-huong a:focus-visible {
+  background-color: var(--mau-nhan);
+  color: #ffffff;
+  padding-left: calc(var(--khoang-cach) + 6px);
+}
+
+nav.thanh-dieu-huong a.hien-tai {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-left: 4px solid var(--mau-nhan);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* 5. Vùng nội dung chính (Main) */
+main.noi-dung-chinh {
+  padding: var(--khoang-cach) 0 var(--khoang-cach-lg) 0;
+}
+
+/* 6. Vùng cột phụ (Aside) */
+aside.cot-phu {
+  background-color: var(--mau-nen-the);
+  border: 1px solid var(--mau-vien-nhat);
+  border-radius: var(--bo-goc);
+  padding: var(--khoang-cach);
+  box-shadow: var(--bong-do-sm);
+}
+
+/* 7. Phần chân trang (Footer) */
+footer.phan-chan {
+  margin-top: auto;
+  background-color: var(--mau-chinh-dam);
+  color: #cbd5e1;
+  padding: var(--khoang-cach-lg) 0 var(--khoang-cach) 0;
+  font-size: var(--co-chu-nho);
+  border-top: 3px solid var(--mau-nhan);
+}
+
+footer.phan-chan a {
+  color: #93c5fd;
+}
+
+footer.phan-chan a:hover {
+  color: #ffffff;
+}
+
+footer.phan-chan hr {
+  display: none; /* Ẩn thẻ hr thô để dùng viền CSS hiện đại */
+}
+
+/* ==========================================================================
+   Điểm ngắt Responsive (Mobile-First Breakpoints)
+   ========================================================================== */
+
+/* Điểm ngắt 1: Máy tính bảng và màn hình trung bình (min-width: 768px) */
+@media (min-width: 768px) {
+  .phan-dau__khung {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .phan-dau__logo img {
+    height: 70px;
+  }
+
+  /* Nav chuyển sang thanh ngang */
+  nav.thanh-dieu-huong ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav.thanh-dieu-huong li {
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  nav.thanh-dieu-huong a {
+    padding: var(--khoang-cach) var(--khoang-cach-md);
+    font-size: var(--co-chu-chuan);
+  }
+
+  nav.thanh-dieu-huong a:hover,
+  nav.thanh-dieu-huong a:focus-visible {
+    padding-left: var(--khoang-cach-md);
+  }
+
+  nav.thanh-dieu-huong a.hien-tai {
+    border-left: none;
+    border-bottom: 3px solid var(--mau-nhan);
+  }
+
+  /* Bố cục trang có Aside chia thành 2 cột */
+  .trang-grid--co-aside {
+    grid-template-columns: 1fr 320px;
+    grid-template-areas:
+      "dau   dau"
+      "menu  menu"
+      "chinh ben"
+      "chan  chan";
+  }
+}
+
+/* Điểm ngắt 2: Máy tính để bàn (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .phan-dau__logo img {
+    height: 80px;
+  }
+
+  nav.thanh-dieu-huong ul {
+    justify-content: flex-start;
+    padding-left: var(--khoang-cach);
+  }
+
+  .trang-grid--co-aside {
+    grid-template-columns: 1fr 350px;
+    gap: var(--khoang-cach-lg);
+  }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BookNest - Nhà sách trực tuyến chuyên cung cấp giáo trình đại học, sách chuyên ngành Công nghệ thông tin, Toán học và văn phòng phẩm chất lượng cao cho sinh viên Trường Đại học Sư phạm - Đại học Đà Nẵng.">
+  <title>Trang chủ | BookNest - Nhà sách trực tuyến sinh viên UED</title>
+  <!-- 5 tầng CSS tổ chức theo đúng yêu cầu đề bài thông qua style.css -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="trang-grid">
+
+  <header class="phan-dau">
+    <div class="khung-chua phan-dau__khung">
+      <div class="phan-dau__logo">
+        <a href="index.html">
+          <img src="images/logo-booknest.png" alt="Logo BookNest - Nhà sách trực tuyến UED" width="250" height="80">
+        </a>
+      </div>
+      <p class="phan-dau__khau-hieu"><strong>BookNest</strong> &mdash; Tri thức nâng bước tương lai, người bạn đồng hành của sinh viên Sư phạm</p>
+    </div>
+  </header>
+
+  <nav class="thanh-dieu-huong" aria-label="Điều hướng chính">
+    <div class="khung-chua">
+      <ul>
+        <li><a href="index.html" class="hien-tai" aria-current="page">Trang chủ</a></li>
+        <li><a href="danh-sach.html">Danh mục sách</a></li>
+        <li><a href="chi-tiet.html">Sách tiêu biểu</a></li>
+        <li><a href="gioi-thieu.html">Giới thiệu nhóm</a></li>
+        <li><a href="lien-he.html">Liên hệ đặt sách</a></li>
+        <li><a href="danh-sach-bootstrap.html">Bản Bootstrap 5</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="noi-dung-chinh khung-chua">
+    <h1>Chào mừng bạn đến với Nhà sách trực tuyến BookNest</h1>
+
+    <!-- 1. Khu vực nổi bật Hero Banner -->
+    <section class="khu-vuc-hero">
+      <h2>Chương trình khuyến mãi giáo trình học kỳ mới</h2>
+      <p>Nhân dịp khai giảng năm học mới 2026 - 2027, BookNest trân trọng gửi tới các bạn sinh viên chương trình trợ giá giáo trình đặc biệt:</p>
+      <figure>
+        <img src="images/banner-khuyenmai.png" alt="Banner chương trình trợ giá 20% giáo trình CNTT và Toán học cho sinh viên" width="800" height="250">
+        <figcaption>Chương trình ưu đãi giảm 20% cho toàn bộ giáo trình chuyên ngành Toán và CNTT</figcaption>
+      </figure>
+      <p>Ưu đãi áp dụng từ ngày 15/09/2026 đến hết ngày 15/10/2026 tại khuôn viên Trường Đại học Sư phạm - Đại học Đà Nẵng.</p>
+    </section>
+
+    <!-- 2. Giới thiệu dự án và Hàng ba thẻ cam kết nổi bật -->
+    <section>
+      <h2>Về dự án BookNest</h2>
+      <p>BookNest là dự án học phần <em>Thiết kế và Lập trình web</em> được phát triển bởi <strong>Nhóm 12 (Lớp 24CNTT3)</strong>, Khoa Toán - Tin, Trường Đại học Sư phạm - Đại học Đà Nẵng.</p>
+      <p>Hệ thống hướng đến mục tiêu giải quyết khó khăn của sinh viên trong việc tìm kiếm giáo trình chuẩn, tài liệu học tập chuyên ngành đáng tin cậy với mức giá hợp lý và phương thức nhận sách tiện lợi ngay tại trường.</p>
+      
+      <h3>Ba cam kết cốt lõi của BookNest</h3>
+      <div class="hang-ba-the">
+        <article class="the-tinh-nang">
+          <h4>Giáo trình chuẩn hóa</h4>
+          <p>100% sách và tài liệu được biên soạn hoặc thẩm định bởi các giảng viên uy tín thuộc các trường đại học hàng đầu.</p>
+        </article>
+        <article class="the-tinh-nang">
+          <h4>Giá cả trợ giá</h4>
+          <p>Trợ giá sinh viên từ 10% đến 25% so với giá bìa thị trường kèm nhiều ưu đãi trong suốt học kỳ.</p>
+        </article>
+        <article class="the-tinh-nang">
+          <h4>Giao nhận nhanh chóng</h4>
+          <p>Nhận sách trực tiếp tại sảnh Khoa Toán - Tin hoặc giao tận phòng ký túc xá trong vòng 24 giờ.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Hàng ba thẻ giới thiệu sách nổi bật bằng CSS Grid auto-fit -->
+    <section>
+      <h2>Danh mục sách và giáo trình nổi bật trong tuần</h2>
+      <p>Dưới đây là các đầu sách chuyên ngành được các bạn sinh viên ngành Công nghệ thông tin và Sư phạm Tin học quan tâm nhiều nhất:</p>
+      
+      <div class="luoi-the">
+        <!-- Thẻ 1 -->
+        <article class="the">
+          <figure class="the__hinh-anh">
+            <img src="images/sach-laptrinh-web.png" alt="Bìa sách Lập trình Web hiện đại với HTML5, CSS3 và PHP" width="175" height="225" loading="lazy">
+          </figure>
+          <div class="the__than">
+            <h3 class="the__tieu-de">Lập trình Web hiện đại với HTML5, CSS3 và PHP</h3>
+            <p class="the__mo-ta">Tác giả: TS. Nguyễn Hải Nam | Nhà xuất bản Thông tin và Truyền thông</p>
+            <p class="the__gia">96.000 VNĐ <span class="the__gia-goc">120.000 VNĐ</span></p>
+            <div class="the__chan">
+              <a href="chi-tiet.html" class="nut nut--chinh">Xem chi tiết &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Thẻ 2 -->
+        <article class="the">
+          <figure class="the__hinh-anh">
+            <img src="images/sach-ctdl-gt.png" alt="Bìa sách Cấu trúc dữ liệu và Giải thuật ứng dụng" width="175" height="225" loading="lazy">
+          </figure>
+          <div class="the__than">
+            <h3 class="the__tieu-de">Cấu trúc dữ liệu và Giải thuật ứng dụng</h3>
+            <p class="the__mo-ta">Tác giả: PGS. TS. Trần Minh Quân | Nhà xuất bản Đại học Quốc gia</p>
+            <p class="the__gia">116.000 VNĐ <span class="the__gia-goc">145.000 VNĐ</span></p>
+            <div class="the__chan">
+              <a href="chi-tiet.html" class="nut nut--chinh">Xem chi tiết &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Thẻ 3 -->
+        <article class="the">
+          <figure class="the__hinh-anh">
+            <img src="images/sach-csdl-sql.png" alt="Bìa sách Hệ quản trị Cơ sở dữ liệu và Ngôn ngữ SQL" width="175" height="225" loading="lazy">
+          </figure>
+          <div class="the__than">
+            <h3 class="the__tieu-de">Hệ quản trị Cơ sở dữ liệu và Ngôn ngữ SQL</h3>
+            <p class="the__mo-ta">Tác giả: ThS. Lê Hoàng An | Nhà xuất bản Bách Khoa Hà Nội</p>
+            <p class="the__gia">88.000 VNĐ <span class="the__gia-goc">110.000 VNĐ</span></p>
+            <div class="the__chan">
+              <a href="chi-tiet.html" class="nut nut--chinh">Xem chi tiết &rarr;</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Dịch vụ hỗ trợ -->
+    <section>
+      <h2>Dịch vụ hỗ trợ người học</h2>
+      <ul>
+        <li>Hỗ trợ tìm và đặt in giáo trình hiếm phục vụ nghiên cứu khoa học.</li>
+        <li>Tư vấn lộ trình chọn sách học theo đề cương môn học từng học kỳ.</li>
+        <li>Thu đổi và ký gửi giáo trình đã qua sử dụng giúp tiết kiệm chi phí học tập.</li>
+      </ul>
+      <p>Quý thầy cô và các bạn sinh viên có thể liên hệ đặt sách số lượng lớn hoặc gửi yêu cầu hỗ trợ qua <a href="lien-he.html" class="nut nut--vien">Trang liên hệ trực tuyến</a>.</p>
+    </section>
+  </main>
+
+  <footer class="phan-chan">
+    <div class="khung-chua">
+      <hr>
+      <p>&copy; 2026 Nhóm 12 (Lớp 24CNTT3) &mdash; Khoa Toán &ndash; Tin, Trường Đại học Sư phạm &ndash; Đại học Đà Nẵng.</p>
+      <p>Dự án phục vụ học phần Thiết kế và Lập trình web. Địa chỉ liên hệ: 459 Tôn Đức Thắng, Quận Liên Chiểu, TP. Đà Nẵng.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
