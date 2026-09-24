@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Giới thiệu về Nhóm 12 lớp 24CNTT3 và dự án đồ án website BookNest - Nhà sách trực tuyến phục vụ sinh viên Trường Đại học Sư phạm - Đại học Đà Nẵng.">
+  <title>Giới thiệu Nhóm 12 và Dự án BookNest | BookNest</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="trang-grid">
+
+  <header class="phan-dau">
+    <div class="khung-chua phan-dau__khung">
+      <div class="phan-dau__logo">
+        <a href="index.html">
+          <img src="images/logo-booknest.png" alt="Logo BookNest - Nhà sách trực tuyến UED" width="250" height="80">
+        </a>
+      </div>
+      <p class="phan-dau__khau-hieu"><strong>BookNest</strong> &mdash; Tri thức nâng bước tương lai, người bạn đồng hành của sinh viên Sư phạm</p>
+    </div>
+  </header>
+
+  <nav class="thanh-dieu-huong" aria-label="Điều hướng chính">
+    <div class="khung-chua">
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="danh-sach.html">Danh mục sách</a></li>
+        <li><a href="chi-tiet.html">Sách tiêu biểu</a></li>
+        <li><a href="gioi-thieu.html" class="hien-tai" aria-current="page">Giới thiệu nhóm</a></li>
+        <li><a href="lien-he.html">Liên hệ đặt sách</a></li>
+        <li><a href="danh-sach-bootstrap.html">Bản Bootstrap 5</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="noi-dung-chinh khung-chua">
+    <h1>Giới thiệu Nhóm phát triển 12 và Đồ án BookNest</h1>
+
+    <!-- 1. Văn bản dài giới thiệu đồ án (Giới hạn độ dài dòng max-width: 65ch theo yêu cầu Bảng 1) -->
+    <section>
+      <h2>Tổng quan về đồ án môn học</h2>
+      <p class="doan-van-dai">Dự án website <strong>BookNest</strong> được xây dựng trong khuôn khổ học phần <em>Thiết kế và Lập trình web</em> (Web Design and Programming), Học kỳ 1 năm học 2026 - 2027 tại Khoa Toán - Tin, Trường Đại học Sư phạm - Đại học Đà Nẵng.</p>
+      <p class="doan-van-dai">Mục tiêu của dự án là áp dụng các kiến thức thực tế về kiến trúc web hiện đại: từ việc phân tích cấu trúc ngữ nghĩa HTML5, thiết kế giao diện thích ứng đa thiết bị (Responsive CSS3), lập trình tương tác máy khách (JavaScript DOM/AJAX) đến xây dựng hệ thống quản trị nội dung hoàn chỉnh phía máy chủ với PHP &amp; MySQL.</p>
+      
+      <h3>Tầm nhìn và sứ mệnh</h3>
+      <ul class="doan-van-dai">
+        <li><strong>Tầm nhìn:</strong> Trở thành cổng thông tin tra cứu và phân phối giáo trình, văn phòng phẩm trực tuyến số một cho sinh viên Trường Đại học Sư phạm - Đại học Đà Nẵng.</li>
+        <li><strong>Sự mệnh:</strong> Số hóa quy trình mượn, mua và chia sẻ tài liệu học tập, góp phần giảm thiểu chi phí và nâng cao chất lượng học tập của sinh viên sư phạm và công nghệ.</li>
+      </ul>
+    </section>
+
+    <!-- 2. Danh sách thành viên (Flexbox bố cục thẻ theo Bảng 1) -->
+    <section>
+      <h2>Danh sách thành viên Nhóm 12 (Lớp 24CNTT3)</h2>
+      <p>Nhóm 12 gồm 3 sinh viên chuyên ngành Công nghệ thông tin cùng hợp tác và phân chia nhiệm vụ cụ thể:</p>
+
+      <div class="danh-sach-thanh-vien">
+        
+        <!-- Thành viên 1 -->
+        <article class="the-thanh-vien">
+          <figure>
+            <img src="images/yoi-avatar.png" alt="Ảnh chân dung sinh viên Xaiyasith Yoi" width="120" height="120" loading="lazy">
+            <figcaption><strong>Xaiyasith Yoi</strong><br><small>MSV: 3120224189</small></figcaption>
+          </figure>
+          <p><span class="huy-hieu huy-hieu--thanh-cong">Nhóm trưởng</span></p>
+          <p class="the__mo-ta">Quản lý dự án, kiến trúc CSS hệ thống, trang <code>index.html</code>, <code>chi-tiet.html</code> và quản trị Git.</p>
+          <a href="thanhvien/3120224189_yoi/gioithieu.html" class="nut nut--chinh">Xem hồ sơ &amp; TKB &rarr;</a>
+        </article>
+
+        <!-- Thành viên 2 -->
+        <article class="the-thanh-vien">
+          <figure>
+            <img src="images/haysady-avatar.png" alt="Ảnh chân dung sinh viên Phommaket Haysady" width="120" height="120" loading="lazy">
+            <figcaption><strong>Phommaket Haysady</strong><br><small>MSV: 3120224181</small></figcaption>
+          </figure>
+          <p><span class="huy-hieu huy-hieu--thanh-cong">Thành viên</span></p>
+          <p class="the__mo-ta">Thiết kế lưới danh mục <code>danh-sach.html</code>, bản <code>danh-sach-bootstrap.html</code>, bảng dữ liệu responsive.</p>
+          <a href="thanhvien/3120224181_haysady/gioithieu.html" class="nut nut--chinh">Xem hồ sơ &amp; TKB &rarr;</a>
+        </article>
+
+        <!-- Thành viên 3 -->
+        <article class="the-thanh-vien">
+          <figure>
+            <img src="images/sauphasith-avatar.png" alt="Ảnh chân dung sinh viên Vongsena Sauphasith" width="120" height="120" loading="lazy">
+            <figcaption><strong>Vongsena Sauphasith</strong><br><small>MSV: 3120224186</small></figcaption>
+          </figure>
+          <p><span class="huy-hieu huy-hieu--thanh-cong">Thành viên</span></p>
+          <p class="the__mo-ta">Xây dựng biểu mẫu <code>lien-he.html</code>, tối ưu hóa khả năng tiếp cận (a11y), kiểm thử Lighthouse và W3C.</p>
+          <a href="thanhvien/3120224186_sauphasith/gioithieu.html" class="nut nut--chinh">Xem hồ sơ &amp; TKB &rarr;</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3. Quy trình phát triển -->
+    <section>
+      <h2>Quy trình phát triển và cộng tác mã nguồn</h2>
+      <p class="doan-van-dai">Nhóm thực hiện quy trình phát triển chuyên nghiệp theo mô hình phân nhánh và commit định danh cá nhân trên nền tảng GitHub:</p>
+      <ul class="doan-van-dai">
+        <li>Kho mã nguồn công khai: <code>ltweb-doan-nhom12</code></li>
+        <li>Bản phát hành giao diện tĩnh chạy thực tế trên dịch vụ GitHub Pages.</li>
+        <li>Mỗi thành viên chủ động cập nhật phần việc cá nhân và cam kết mã nguồn độc lập từ tài khoản của mình.</li>
+      </ul>
+      <p>Mọi thắc mắc hoặc yêu cầu đóng góp ý kiến cho dự án xin vui lòng gửi về qua <a href="lien-he.html" class="nut nut--vien">Trang liên hệ trực tuyến</a>.</p>
+    </section>
+  </main>
+
+  <footer class="phan-chan">
+    <div class="khung-chua">
+      <hr>
+      <p>&copy; 2026 Nhóm 12 (Lớp 24CNTT3) &mdash; Khoa Toán &ndash; Tin, Trường Đại học Sư phạm &ndash; Đại học Đà Nẵng.</p>
+      <p>Dự án phục vụ học phần Thiết kế và Lập trình web. Địa chỉ liên hệ: 459 Tôn Đức Thắng, Quận Liên Chiểu, TP. Đà Nẵng.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
