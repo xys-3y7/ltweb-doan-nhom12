@@ -23,6 +23,7 @@
 
   <nav class="thanh-dieu-huong" aria-label="Điều hướng chính">
     <div class="khung-chua">
+      <button class="nut-menu" id="nut-menu" aria-label="Mở menu điều hướng" aria-expanded="false">&#9776; Menu</button>
       <ul>
         <li><a href="index.html" class="hien-tai" aria-current="page">Trang chủ</a></li>
         <li><a href="danh-sach.html">Danh mục sách</a></li>
@@ -30,12 +31,16 @@
         <li><a href="gioi-thieu.html">Giới thiệu nhóm</a></li>
         <li><a href="lien-he.html">Liên hệ đặt sách</a></li>
         <li><a href="danh-sach-bootstrap.html">Bản Bootstrap 5</a></li>
+        <li><a href="danh-sach.html" class="nut-yeu-thich-nav">❤️ Yêu thích (<span class="so-luong-yeu-thich">0</span>)</a></li>
       </ul>
     </div>
   </nav>
 
   <main class="noi-dung-chinh khung-chua">
     <h1>Chào mừng bạn đến với Nhà sách trực tuyến BookNest</h1>
+
+    <!-- Khối thời tiết động từ Open-Meteo REST API (Chức năng 5) -->
+    <section id="khoi-thoi-tiet-dong" class="khoi-thoi-tiet-container" aria-live="polite"></section>
 
     <!-- 1. Khu vực nổi bật Hero Banner -->
     <section class="khu-vuc-hero">
@@ -144,5 +149,8 @@
     </div>
   </footer>
 
+  <!-- Nạp các module JavaScript ES6+ (Chương 4) -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/trang-chu.js"></script>
 </body>
 </html>
