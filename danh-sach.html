@@ -22,6 +22,7 @@
 
   <nav class="thanh-dieu-huong" aria-label="Điều hướng chính">
     <div class="khung-chua">
+      <button class="nut-menu" id="nut-menu" aria-label="Mở menu điều hướng" aria-expanded="false">&#9776; Menu</button>
       <ul>
         <li><a href="index.html">Trang chủ</a></li>
         <li><a href="danh-sach.html" class="hien-tai" aria-current="page">Danh mục sách</a></li>
@@ -29,6 +30,7 @@
         <li><a href="gioi-thieu.html">Giới thiệu nhóm</a></li>
         <li><a href="lien-he.html">Liên hệ đặt sách</a></li>
         <li><a href="danh-sach-bootstrap.html">Bản Bootstrap 5</a></li>
+        <li><a href="danh-sach.html#yeu-thich" class="nut-yeu-thich-nav">❤️ Yêu thích (<span class="so-luong-yeu-thich">0</span>)</a></li>
       </ul>
     </div>
   </nav>
@@ -52,6 +54,40 @@
     <!-- Lưới thẻ sản phẩm (Bắt buộc theo Bảng 1: CSS Grid repeat(auto-fit, minmax(..., 1fr)), object-fit: cover) -->
     <section id="luoi-san-pham">
       <h2>Lưới sách chuyên ngành tiêu biểu</h2>
+
+      <!-- Thanh công cụ tìm kiếm tức thời, lọc danh mục và sắp xếp (Chức năng 2) -->
+      <div class="thanh-cong-cu-loc">
+        <div class="o-tim-kiem-nhom">
+          <input type="search" id="o-tim-kiem" placeholder="🔍 Tìm kiếm tên sách, tác giả, NXB (gõ không dấu)..." aria-label="Tìm kiếm sách">
+        </div>
+        <div>
+          <select id="bo-loc-danh-muc" class="select-loc" aria-label="Lọc theo danh mục">
+            <option value="tat-ca">Tất cả ngành học</option>
+            <option value="cntt">Công nghệ thông tin</option>
+            <option value="toanhoc">Toán học</option>
+            <option value="vanphongpham">Văn phòng phẩm</option>
+          </select>
+        </div>
+        <div>
+          <select id="bo-loc-sap-xep" class="select-loc" aria-label="Sắp xếp sản phẩm">
+            <option value="mac-dinh">Sắp xếp mặc định</option>
+            <option value="gia-tang">Giá: Thấp &rarr; Cao</option>
+            <option value="gia-giam">Giá: Cao &rarr; Thấp</option>
+            <option value="ten-az">Tên sách: A &rarr; Z</option>
+            <option value="ten-za">Tên sách: Z &rarr; A</option>
+          </select>
+        </div>
+      </div>
+      <p id="thong-bao-ket-qua-loc" class="thong-bao-ket-qua" aria-live="polite"></p>
+
+      <!-- Vùng hiển thị động nạp từ data/san-pham.json qua fetch async/await -->
+      <div class="luoi-the" id="danh-sach-san-pham-dong"></div>
+
+      <!-- Progressive Enhancement: Hiển thị danh sách tĩnh dự phòng khi người dùng tắt JavaScript -->
+      <noscript>
+        <div class="hop-chu-y">
+          <p><strong>Thông báo dự phòng (Progressive Enhancement):</strong> Trình duyệt của bạn đang tắt JavaScript. Dưới đây là danh mục sách tĩnh có sẵn trên trang.</p>
+        </div>
       <div class="luoi-the">
         
         <!-- Sách 1 -->
@@ -118,6 +154,7 @@
           </div>
         </article>
       </div>
+      </noscript>
     </section>
 
     <!-- Bảng danh mục CNTT có khung cuộn ngang trên mobile -->
@@ -277,5 +314,8 @@
     </div>
   </footer>
 
+  <!-- Nạp các module JavaScript ES6+ (Chương 4) -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/trang-danh-sach.js"></script>
 </body>
 </html>
