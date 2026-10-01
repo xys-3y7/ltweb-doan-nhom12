@@ -1,0 +1,74 @@
+/* ==========================================================================
+   custom-bootstrap.css — Tùy biến biến CSS của Bootstrap 5
+   Dự án: BookNest - Bản song song danh-sach-bootstrap.html
+   Nhóm 12 - Lớp 24CNTT3
+   ========================================================================== */
+
+:root {
+  /* Tùy biến bảng màu chính của Bootstrap 5 theo nhận diện thương hiệu BookNest */
+  --bs-primary: #123b6d;          /* Xanh Navy BookNest thay thế màu mặc định #0d6efd */
+  --bs-primary-rgb: 18, 59, 109;
+  --bs-secondary: #475569;        /* Xám Slate */
+  --bs-secondary-rgb: 71, 85, 105;
+  --bs-success: #059669;          /* Xanh lá tươi */
+  --bs-warning: #d97706;          /* Màu hổ phách nhấn */
+  --bs-warning-rgb: 217, 119, 6;
+  --bs-danger: #dc2626;
+
+  /* Tùy biến typography và bo góc */
+  --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bs-body-color: #1e293b;
+  --bs-body-bg: #f8fafc;
+  --bs-border-radius: 8px;
+  --bs-border-radius-lg: 12px;
+  --bs-link-color: #123b6d;
+  --bs-link-hover-color: #d97706;
+}
+
+/* Tùy biến bổ trợ cho Navbar Bootstrap */
+.navbar-custom {
+  background: linear-gradient(135deg, #123b6d 0%, #0a2240 100%) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .nav-link {
+  color: #f1f5f9 !important;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus-visible {
+  color: #fbbf24 !important;
+}
+
+.navbar-custom .nav-link.active {
+  color: #ffffff !important;
+  font-weight: 700;
+  border-bottom: 2px solid #fbbf24;
+}
+
+/* Card tùy biến */
+.card {
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Focus-visible chuẩn Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #d97706 !important;
+  outline-offset: 2px;
+}

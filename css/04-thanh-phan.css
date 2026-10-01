@@ -1,0 +1,431 @@
+/* ==========================================================================
+   04-thanh-phan.css — Các thành phần giao diện (BEM & Flexbox)
+   Dự án: BookNest - Website Bán Sách & Văn Phòng Phẩm Trực Tuyến
+   ========================================================================== */
+
+/* 1. Lưới thẻ thích ứng (Responsive Card Grid) */
+.luoi-the {
+  display: grid;
+  gap: var(--khoang-cach-md);
+  grid-template-columns: 1fr;
+  margin-bottom: var(--khoang-cach-lg);
+}
+
+@media (min-width: 576px) {
+  .luoi-the {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* 2. Thẻ nội dung (Card Component theo BEM) */
+.the {
+  background-color: var(--mau-nen-the);
+  border: 1px solid var(--mau-vien-nhat);
+  border-radius: var(--bo-goc);
+  overflow: hidden;
+  box-shadow: var(--bong-do-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--chuyen-dong);
+}
+
+.the:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bong-do);
+  border-color: var(--mau-chinh-nhat);
+}
+
+.the__hinh-anh {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.the__hinh-anh img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--chuyen-dong);
+}
+
+.the:hover .the__hinh-anh img {
+  transform: scale(1.04);
+}
+
+.the__than {
+  padding: var(--khoang-cach);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.the__tieu-de {
+  font-size: var(--co-chu-md);
+  margin-top: 0;
+  margin-bottom: var(--khoang-cach-xs);
+  color: var(--mau-chinh-dam);
+}
+
+.the__mo-ta {
+  font-size: var(--co-chu-nho);
+  color: var(--mau-chu-nhat);
+  margin-bottom: var(--khoang-cach-sm);
+  flex-grow: 1;
+}
+
+.the__gia {
+  font-size: var(--co-chu-md);
+  font-weight: 700;
+  color: var(--mau-nhan);
+  margin-bottom: var(--khoang-cach-sm);
+}
+
+.the__gia-goc {
+  font-size: var(--co-chu-nho);
+  color: var(--mau-chu-nhat);
+  text-decoration: line-through;
+  font-weight: 400;
+  margin-left: var(--khoang-cach-xs);
+}
+
+.the__chan {
+  margin-top: auto;
+  padding-top: var(--khoang-cach-sm);
+  border-top: 1px dashed var(--mau-vien-nhat);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 3. Khu vực Hero Banner */
+.khu-vuc-hero {
+  background: linear-gradient(to right, #ffffff, #f1f5f9);
+  border: 1px solid var(--mau-vien-nhat);
+  border-radius: var(--bo-goc-lg);
+  padding: var(--khoang-cach);
+  margin-bottom: var(--khoang-cach-lg);
+  box-shadow: var(--bong-do-sm);
+}
+
+.khu-vuc-hero figure {
+  margin: 0;
+  border-radius: var(--bo-goc);
+  overflow: hidden;
+}
+
+.khu-vuc-hero img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: var(--bo-goc);
+}
+
+/* 4. Hàng ba thẻ giới thiệu cam kết (Index & Giới thiệu) */
+.hang-ba-the {
+  display: flex;
+  flex-direction: column;
+  gap: var(--khoang-cach);
+  margin-bottom: var(--khoang-cach-lg);
+}
+
+@media (min-width: 768px) {
+  .hang-ba-the {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hang-ba-the > * {
+    flex: 1 1 calc(33.333% - var(--khoang-cach));
+  }
+}
+
+.the-tinh-nang {
+  background-color: var(--mau-nen-the);
+  border: 1px solid var(--mau-vien-nhat);
+  border-left: 4px solid var(--mau-chinh);
+  border-radius: var(--bo-goc);
+  padding: var(--khoang-cach);
+  box-shadow: var(--bong-do-sm);
+}
+
+.the-tinh-nang:hover {
+  border-left-color: var(--mau-nhan);
+}
+
+/* 5. Nút bấm (Button Component) */
+.nut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.25rem;
+  font-size: var(--co-chu-nho);
+  font-weight: 600;
+  border-radius: var(--bo-goc);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--chuyen-dong);
+  min-height: 44px; /* Chuẩn tiếp cận kích thước chạm di động (touch target) */
+}
+
+.nut--chinh {
+  background-color: var(--mau-chinh);
+  color: #ffffff;
+}
+
+.nut--chinh:hover {
+  background-color: var(--mau-chinh-dam);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nut--nhan {
+  background-color: var(--mau-nhan);
+  color: #ffffff;
+}
+
+.nut--nhan:hover {
+  background-color: var(--mau-nhan-hover);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nut--vien {
+  background-color: transparent;
+  border-color: var(--mau-chinh);
+  color: var(--mau-chinh);
+}
+
+.nut--vien:hover {
+  background-color: var(--mau-chinh);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* 6. Biểu mẫu (Form Component) */
+.bieu-mau {
+  background-color: var(--mau-nen-the);
+  border: 1px solid var(--mau-vien-nhat);
+  border-radius: var(--bo-goc-lg);
+  padding: var(--khoang-cach);
+  box-shadow: var(--bong-do-sm);
+  margin-bottom: var(--khoang-cach-lg);
+}
+
+@media (min-width: 768px) {
+  .bieu-mau {
+    padding: var(--khoang-cach-lg);
+  }
+}
+
+.bieu-mau fieldset {
+  border: 1px solid var(--mau-vien);
+  border-radius: var(--bo-goc);
+  padding: var(--khoang-cach);
+  margin-bottom: var(--khoang-cach-md);
+  background-color: #fafbfc;
+}
+
+.bieu-mau legend {
+  font-weight: 700;
+  color: var(--mau-chinh);
+  padding: 0 var(--khoang-cach-sm);
+  font-size: var(--co-chu-md);
+}
+
+.nhom-nhap-lieu {
+  margin-bottom: var(--khoang-cach);
+}
+
+.nhom-nhap-lieu label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--khoang-cach-xs);
+  color: var(--mau-chu);
+}
+
+.nhom-nhap-lieu input[type="text"],
+.nhom-nhap-lieu input[type="email"],
+.nhom-nhap-lieu input[type="tel"],
+.nhom-nhap-lieu input[type="number"],
+.nhom-nhap-lieu select,
+.nhom-nhap-lieu textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-family: inherit;
+  font-size: var(--co-chu-chuan);
+  color: var(--mau-chu);
+  background-color: #ffffff;
+  border: 1px solid var(--mau-vien);
+  border-radius: var(--bo-goc);
+  transition: var(--chuyen-dong);
+  min-height: 44px;
+}
+
+.nhom-nhap-lieu textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.nhom-nhap-lieu input:focus,
+.nhom-nhap-lieu select:focus,
+.nhom-nhap-lieu textarea:focus {
+  border-color: var(--mau-phu);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+}
+
+.nhom-nhap-lieu--ngang {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--khoang-cach);
+}
+
+.nhom-nhap-lieu--ngang > * {
+  flex: 1 1 200px;
+}
+
+/* 7. Bảng dữ liệu có khung cuộn ngang (Responsive Table Wrapper) */
+.khung-cuon-bang {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--khoang-cach-lg);
+  border: 1px solid var(--mau-vien);
+  border-radius: var(--bo-goc);
+  background-color: #ffffff;
+}
+
+.khung-cuon-bang table {
+  margin-bottom: 0;
+  min-width: 600px; /* Đảm bảo các cột bảng không bị ép bẹp */
+}
+
+.khung-cuon-bang tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.khung-cuon-bang tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* 8. Huy hiệu trạng thái (Badge) */
+.huy-hieu {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--bo-goc-tron);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.huy-hieu--thanh-cong {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.huy-hieu--canh-bao {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* 9. Khung chứa video nhúng tỉ lệ 16:9 (Responsive Video) */
+.khung-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--bo-goc);
+  margin-bottom: var(--khoang-cach);
+  box-shadow: var(--bong-do);
+}
+
+.khung-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 10. Thanh lọc danh mục sách */
+.thanh-loc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--khoang-cach-sm);
+  padding: var(--khoang-cach-sm) 0;
+  margin-bottom: var(--khoang-cach);
+}
+
+.thanh-loc a {
+  padding: 0.4rem 0.85rem;
+  background-color: #e2e8f0;
+  color: var(--mau-chu);
+  text-decoration: none;
+  border-radius: var(--bo-goc-tron);
+  font-size: var(--co-chu-nho);
+  font-weight: 500;
+  transition: var(--chuyen-dong);
+}
+
+.thanh-loc a:hover,
+.thanh-loc a:focus-visible {
+  background-color: var(--mau-chinh);
+  color: #ffffff;
+}
+
+/* 11. Danh sách thành viên (Flexbox Cards trong gioi-thieu.html) */
+.danh-sach-thanh-vien {
+  display: flex;
+  flex-direction: column;
+  gap: var(--khoang-cach-md);
+  margin-bottom: var(--khoang-cach-lg);
+}
+
+@media (min-width: 768px) {
+  .danh-sach-thanh-vien {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .danh-sach-thanh-vien > article {
+    flex: 1 1 calc(33.333% - var(--khoang-cach-md));
+  }
+}
+
+.the-thanh-vien {
+  background-color: var(--mau-nen-the);
+  border: 1px solid var(--mau-vien-nhat);
+  border-radius: var(--bo-goc);
+  padding: var(--khoang-cach);
+  box-shadow: var(--bong-do-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--chuyen-dong);
+}
+
+.the-thanh-vien:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bong-do);
+  border-color: var(--mau-chinh);
+}
+
+.the-thanh-vien figure {
+  margin-bottom: var(--khoang-cach-sm);
+}
+
+.the-thanh-vien img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--mau-chinh-nhat);
+}

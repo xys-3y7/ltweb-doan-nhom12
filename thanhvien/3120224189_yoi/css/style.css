@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Trang cá nhân: Xaiyasith Yoi - MSV: 3120224189 (Nhóm trưởng)
+   CSS Responsive, CSS Grid / Flexbox, Khung cuộn thời khóa biểu, a11y focus
+   ========================================================================== */
+
+/* 1. Nạp và tái sử dụng biến CSS chung của nhóm */
+:root {
+  --mau-chinh: #123b6d;
+  --mau-chinh-dam: #0a2240;
+  --mau-chinh-nhat: #e8eef6;
+  --mau-phu: #0284c7;
+  --mau-nhan: #d97706;
+  --mau-nhan-hover: #b45309;
+  --mau-chu: #1e293b;
+  --mau-chu-nhat: #475569;
+  --mau-nen: #f8fafc;
+  --mau-nen-the: #ffffff;
+  --mau-vien: #cbd5e1;
+  --bo-goc: 8px;
+  --bong-do: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  --chuyen-dong: all 0.25s ease-in-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--mau-chu);
+  background-color: var(--mau-nen);
+  overflow-x: hidden;
+}
+
+/* Khung chứa giới hạn */
+.khung-chua {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Phần đầu (Header) */
+header {
+  background: linear-gradient(135deg, var(--mau-chinh) 0%, var(--mau-chinh-dam) 100%);
+  color: #ffffff;
+  padding: 1.25rem 0;
+  text-align: center;
+}
+
+header img {
+  height: 55px;
+  width: auto;
+  margin: 0 auto;
+}
+
+header p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+/* Thanh điều hướng */
+nav {
+  background-color: var(--mau-chinh-dam);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+nav li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--chuyen-dong);
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: var(--mau-nhan);
+  color: #ffffff;
+}
+
+/* Bố cục nội dung chính (CSS Grid & Flexbox) */
+main {
+  padding: 1.5rem 0 3rem 0;
+}
+
+h1 {
+  color: var(--mau-chinh-dam);
+  font-size: 1.75rem;
+  border-bottom: 3px solid var(--mau-nhan);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  color: var(--mau-chinh);
+  font-size: 1.35rem;
+  margin-top: 1.5rem;
+  border-bottom: 1px solid var(--mau-chinh-nhat);
+  padding-bottom: 0.4rem;
+}
+
+h3 {
+  color: var(--mau-chu);
+  font-size: 1.15rem;
+}
+
+/* Khối hồ sơ lý lịch (Flexbox responsive) */
+.ho-so-ca-nhan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--mau-nen-the);
+  padding: 1.5rem;
+  border-radius: var(--bo-goc);
+  border: 1px solid var(--mau-vien);
+  box-shadow: var(--bong-do);
+  margin-bottom: 1.5rem;
+}
+
+.ho-so-ca-nhan figure {
+  margin: 0;
+  text-align: center;
+}
+
+.ho-so-ca-nhan img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--mau-chinh-nhat);
+  box-shadow: var(--bong-do);
+}
+
+.ho-so-ca-nhan figcaption {
+  font-size: 0.85rem;
+  color: var(--mau-chu-nhat);
+  margin-top: 0.5rem;
+}
+
+.ho-so-ca-nhan ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.ho-so-ca-nhan li {
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+/* Khối kỹ năng dạng thẻ tag Flexbox */
+.danh-sach-ky-nang {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.danh-sach-ky-nang li {
+  background-color: var(--mau-chinh-nhat);
+  color: var(--mau-chinh-dam);
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #cbd5e1;
+}
+
+/* Khung cuộn ngang bảng thời khóa biểu trên thiết bị di động */
+.khung-cuon-tkb {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  border: 1px solid var(--mau-vien);
+  border-radius: var(--bo-goc);
+  background-color: #ffffff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* Đảm bảo các ngày thứ 2 đến thứ 7 không bị ép nhỏ */
+}
+
+caption {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5rem;
+  color: var(--mau-chinh);
+}
+
+th, td {
+  padding: 0.65rem 0.75rem;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+}
+
+th {
+  background-color: var(--mau-chinh);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Chân trang */
+footer {
+  background-color: var(--mau-chinh-dam);
+  color: #cbd5e1;
+  text-align: center;
+  padding: 1.25rem 0;
+  font-size: 0.85rem;
+  border-top: 3px solid var(--mau-nhan);
+}
+
+footer hr {
+  display: none;
+}
+
+/* Tiếp cận & Tương tác */
+a {
+  color: var(--mau-chinh);
+  transition: var(--chuyen-dong);
+}
+
+a:hover {
+  color: var(--mau-nhan);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--mau-nhan);
+  outline-offset: 2px;
+}
+
+/* Điểm ngắt Responsive (Mobile-First min-width: 768px) */
+@media (min-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  nav li {
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .ho-so-ca-nhan {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .ho-so-ca-nhan figure {
+    flex: 0 0 160px;
+  }
+
+  .ho-so-ca-nhan ul {
+    flex: 1;
+  }
+}

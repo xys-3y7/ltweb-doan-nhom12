@@ -1,0 +1,77 @@
+/* ==========================================================================
+   05-tien-ich.css — Lớp tiện ích dùng lại (Utility Classes)
+   Dự án: BookNest - Website Bán Sách & Văn Phòng Phẩm Trực Tuyến
+   ========================================================================== */
+
+/* 1. Giới hạn chiều dài dòng cho văn bản dài (Yêu cầu trang gioi-thieu.html) */
+.doan-van-dai {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+/* 2. Tiện ích ẩn hiện theo thiết bị */
+.chi-hien-tren-may-tinh {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .chi-hien-tren-may-tinh {
+    display: block !important;
+  }
+}
+
+.chi-hien-tren-di-dong {
+  display: block !important;
+}
+
+@media (min-width: 768px) {
+  .chi-hien-tren-di-dong {
+    display: none !important;
+  }
+}
+
+/* 3. Lớp hỗ trợ người dùng khiếm thị (Screen Reader Only) */
+.chi-danh-cho-trinh-doc-man-hinh {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* 4. Tiện ích căn chỉnh văn bản */
+.chu-canh-giua { text-align: center; }
+.chu-canh-trai { text-align: left; }
+.chu-canh-phai { text-align: right; }
+
+/* 5. Tiện ích màu chữ */
+.chu-chinh { color: var(--mau-chinh); }
+.chu-nhan   { color: var(--mau-nhan); }
+.chu-mo     { color: var(--mau-chu-nhat); }
+.chu-thanh-cong { color: var(--mau-thanh-cong); }
+
+/* 6. Tiện ích khoảng cách */
+.kc-duoi-sm { margin-bottom: var(--khoang-cach-sm); }
+.kc-duoi-md { margin-bottom: var(--khoang-cach-md); }
+.kc-duoi-lg { margin-bottom: var(--khoang-cach-lg); }
+
+.kc-tren-sm { margin-top: var(--khoang-cach-sm); }
+.kc-tren-md { margin-top: var(--khoang-cach-md); }
+.kc-tren-lg { margin-top: var(--khoang-cach-lg); }
+
+/* 7. Hộp nổi bật (Callout Box) */
+.hop-chu-y {
+  background-color: var(--mau-chinh-nhat);
+  border-left: 4px solid var(--mau-chinh);
+  padding: var(--khoang-cach);
+  border-radius: 0 var(--bo-goc) var(--bo-goc) 0;
+  margin-bottom: var(--khoang-cach);
+}
+
+.hop-chu-y p:last-child {
+  margin-bottom: 0;
+}
