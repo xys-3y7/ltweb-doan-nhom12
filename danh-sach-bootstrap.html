@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Danh mục giáo trình và sách chuyên ngành BookNest - Bản dựng song song bằng Bootstrap 5 Framework phục vụ so sánh kỹ thuật theo yêu cầu học phần.">
+  <title>Danh mục sách (Bản Bootstrap 5) | BookNest</title>
+  <!-- 1. Bootstrap 5 CSS qua CDN chính thức -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- 2. Tệp CSS riêng tùy biến biến --bs-* nạp sau Bootstrap theo đúng yêu cầu đề bài -->
+  <link rel="stylesheet" href="css/custom-bootstrap.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <!-- Thành phần 1: Navbar dựng sẵn của Bootstrap 5 -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3" aria-label="Điều hướng Bootstrap BookNest">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="images/logo-booknest.png" alt="Logo BookNest" height="45" class="d-inline-block align-text-top bg-white rounded p-1">
+          <span class="fs-5 fw-bold text-white">BookNest</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Mở menu điều hướng">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+            <li class="nav-item"><a class="nav-link" href="danh-sach.html">Bản tự viết CSS</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="danh-sach-bootstrap.html">Bản Bootstrap 5</a></li>
+            <li class="nav-item"><a class="nav-link" href="chi-tiet.html">Sách tiêu biểu</a></li>
+            <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu nhóm</a></li>
+            <li class="nav-item"><a class="nav-link" href="lien-he.html">Liên hệ đặt sách</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Thành phần 2: Container và Alert Banner -->
+  <main class="container my-4 flex-grow-1">
+    
+    <!-- Thông báo Alert dựng sẵn -->
+    <div class="alert alert-info alert-dismissible fade show d-flex align-items-center justify-content-between mb-4 shadow-sm" role="alert">
+      <div>
+        <strong class="d-block mb-1">📢 Phiên bản thực hành song song với Bootstrap 5:</strong>
+        Trang này sử dụng hệ thống lưới <code>container - row - col-*</code>, các thành phần <em>navbar, card, table, alert, pagination</em> và tùy biến biến <code>--bs-*</code> theo quy định Bảng 3.
+      </div>
+      <a href="danh-sach.html" class="btn btn-sm btn-outline-primary ms-3 text-nowrap">Về bản tự viết CSS</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4 border-bottom pb-2">
+      <h1 class="h2 text-primary fw-bold mb-0">Danh mục giáo trình chuyên ngành (Bootstrap 5)</h1>
+      <span class="badge bg-secondary fs-6 py-2 px-3">Học kỳ 1 / 2026 - 2027</span>
+    </div>
+
+    <!-- Thành phần 3: Lưới Card dựng sẵn kết hợp row & col-* -->
+    <section class="mb-5">
+      <h2 class="h4 text-dark fw-bold mb-3">Sách giáo trình chuyên ngành nổi bật</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+        
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="images/sach-laptrinh-web.png" class="card-img-top" alt="Lập trình Web hiện đại" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-success align-self-start mb-2">Còn 25 cuốn</span>
+              <h3 class="card-title h6 fw-bold">Lập trình Web hiện đại với HTML5, CSS3 và PHP</h3>
+              <p class="card-text text-muted small flex-grow-1">TS. Nguyễn Hải Nam &mdash; NXB Thông tin &amp; Truyền thông</p>
+              <div class="mt-auto pt-2 border-top d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-danger fs-5">96.000 đ</span>
+                <a href="chi-tiet.html" class="btn btn-sm btn-primary">Chi tiết</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="images/sach-ctdl-gt.png" class="card-img-top" alt="Cấu trúc dữ liệu và Giải thuật" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-success align-self-start mb-2">Còn 40 cuốn</span>
+              <h3 class="card-title h6 fw-bold">Cấu trúc dữ liệu và Giải thuật ứng dụng</h3>
+              <p class="card-text text-muted small flex-grow-1">PGS. TS. Trần Minh Quân &mdash; NXB ĐHQG Hà Nội</p>
+              <div class="mt-auto pt-2 border-top d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-danger fs-5">116.000 đ</span>
+                <a href="chi-tiet.html" class="btn btn-sm btn-primary">Chi tiết</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="images/sach-csdl-sql.png" class="card-img-top" alt="Hệ quản trị Cơ sở dữ liệu" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-success align-self-start mb-2">Còn 18 cuốn</span>
+              <h3 class="card-title h6 fw-bold">Hệ quản trị Cơ sở dữ liệu và Ngôn ngữ SQL</h3>
+              <p class="card-text text-muted small flex-grow-1">ThS. Lê Hoàng An &mdash; NXB Bách Khoa Hà Nội</p>
+              <div class="mt-auto pt-2 border-top d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-danger fs-5">88.000 đ</span>
+                <a href="chi-tiet.html" class="btn btn-sm btn-primary">Chi tiết</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="images/sach-mang-may-tinh.png" class="card-img-top" alt="Mạng máy tính căn bản" loading="lazy">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-success align-self-start mb-2">Còn 12 cuốn</span>
+              <h3 class="card-title h6 fw-bold">Mạng máy tính căn bản và Kiến trúc TCP/IP</h3>
+              <p class="card-text text-muted small flex-grow-1">TS. Võ Thành Long &mdash; NXB Xây Dựng</p>
+              <div class="mt-auto pt-2 border-top d-flex justify-content-between align-items-center">
+                <span class="fw-bold text-danger fs-5">102.000 đ</span>
+                <a href="chi-tiet.html" class="btn btn-sm btn-primary">Chi tiết</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Thành phần 4: Bảng dữ liệu Responsive của Bootstrap (table-responsive, table-hover, table-striped) -->
+    <section class="mb-5">
+      <h2 class="h4 text-dark fw-bold mb-3">Bảng tra cứu giáo trình Công nghệ thông tin</h2>
+      <div class="table-responsive shadow-sm rounded">
+        <table class="table table-hover table-striped table-bordered align-middle mb-0">
+          <thead class="table-primary text-nowrap">
+            <tr>
+              <th scope="col">Mã sách</th>
+              <th scope="col">Tên giáo trình</th>
+              <th scope="col">Tác giả</th>
+              <th scope="col">NXB</th>
+              <th scope="col">Năm</th>
+              <th scope="col">Đơn giá</th>
+              <th scope="col">Tình trạng</th>
+              <th scope="col">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">IT-WEB-01</th>
+              <td class="fw-medium">Lập trình Web hiện đại với HTML5, CSS3 và PHP</td>
+              <td>TS. Nguyễn Hải Nam</td>
+              <td>TT&amp;TT</td>
+              <td>2024</td>
+              <td class="text-danger fw-bold">96.000 đ</td>
+              <td><span class="badge bg-success">Còn hàng</span></td>
+              <td><a href="chi-tiet.html" class="btn btn-sm btn-primary">Xem</a></td>
+            </tr>
+            <tr>
+              <th scope="row">IT-DSA-02</th>
+              <td class="fw-medium">Cấu trúc dữ liệu và Giải thuật ứng dụng</td>
+              <td>PGS. TS. Trần Minh Quân</td>
+              <td>ĐHQG Hà Nội</td>
+              <td>2023</td>
+              <td class="text-danger fw-bold">116.000 đ</td>
+              <td><span class="badge bg-success">Còn hàng</span></td>
+              <td><a href="chi-tiet.html" class="btn btn-sm btn-primary">Xem</a></td>
+            </tr>
+            <tr>
+              <th scope="row">IT-DB-03</th>
+              <td class="fw-medium">Hệ quản trị Cơ sở dữ liệu và Ngôn ngữ SQL</td>
+              <td>ThS. Lê Hoàng An</td>
+              <td>Bách Khoa HN</td>
+              <td>2024</td>
+              <td class="text-danger fw-bold">88.000 đ</td>
+              <td><span class="badge bg-success">Còn hàng</span></td>
+              <td><a href="chi-tiet.html" class="btn btn-sm btn-primary">Xem</a></td>
+            </tr>
+            <tr>
+              <th scope="row">IT-NET-04</th>
+              <td class="fw-medium">Mạng máy tính căn bản và Kiến trúc TCP/IP</td>
+              <td>TS. Võ Thành Long</td>
+              <td>Xây Dựng</td>
+              <td>2023</td>
+              <td class="text-danger fw-bold">102.000 đ</td>
+              <td><span class="badge bg-success">Còn hàng</span></td>
+              <td><a href="chi-tiet.html" class="btn btn-sm btn-primary">Xem</a></td>
+            </tr>
+            <tr>
+              <th scope="row">IT-OOP-05</th>
+              <td class="fw-medium">Lập trình hướng đối tượng với Java</td>
+              <td>ThS. Đỗ Thị Thu Trang</td>
+              <td>ĐHQG TP.HCM</td>
+              <td>2025</td>
+              <td class="text-danger fw-bold">110.000 đ</td>
+              <td><span class="badge bg-danger">Tạm hết</span></td>
+              <td><a href="lien-he.html" class="btn btn-sm btn-outline-warning">Đặt trước</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Thành phần 5: Phân trang (Pagination) của Bootstrap -->
+    <nav aria-label="Điều hướng phân trang giáo trình" class="my-4">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled"><span class="page-link">&laquo; Trước</span></li>
+        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+        <li class="page-item"><a class="page-link" href="#cntt">2</a></li>
+        <li class="page-item"><a class="page-link" href="#toanhoc">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Sau &raquo;</a></li>
+      </ul>
+    </nav>
+
+  </main>
+
+  <!-- Chân trang -->
+  <footer class="bg-dark text-light py-4 mt-auto border-top border-warning border-3">
+    <div class="container text-center text-md-start">
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <p class="mb-1">&copy; 2026 Nhóm 12 (Lớp 24CNTT3) &mdash; Khoa Toán &ndash; Tin, ĐH Sư phạm &ndash; ĐH Đà Nẵng.</p>
+          <p class="small text-secondary mb-0">Website phục vụ đồ án học phần Thiết kế và Lập trình Web.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="small text-secondary mb-0">Địa chỉ: 459 Tôn Đức Thắng, Quận Liên Chiểu, TP. Đà Nẵng.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
