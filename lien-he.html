@@ -22,6 +22,7 @@
 
   <nav class="thanh-dieu-huong" aria-label="Điều hướng chính">
     <div class="khung-chua">
+      <button class="nut-menu" id="nut-menu" aria-label="Mở menu điều hướng" aria-expanded="false">&#9776; Menu</button>
       <ul>
         <li><a href="index.html">Trang chủ</a></li>
         <li><a href="danh-sach.html">Danh mục sách</a></li>
@@ -29,6 +30,7 @@
         <li><a href="gioi-thieu.html">Giới thiệu nhóm</a></li>
         <li><a href="lien-he.html" class="hien-tai" aria-current="page">Liên hệ đặt sách</a></li>
         <li><a href="danh-sach-bootstrap.html">Bản Bootstrap 5</a></li>
+        <li><a href="danh-sach.html#yeu-thich" class="nut-yeu-thich-nav">❤️ Yêu thích (<span class="so-luong-yeu-thich">0</span>)</a></li>
       </ul>
     </div>
   </nav>
@@ -48,12 +50,15 @@
       </ul>
     </section>
 
-    <!-- 2. Biểu mẫu liên hệ (Form Component) -->
+    <!-- 2. Biểu mẫu liên hệ (Form Component - Chức năng 4) -->
     <section>
       <h2>Gửi phiếu đăng ký thông tin hoặc góp ý</h2>
-      <p>Vui lòng điền đầy đủ các trường thông tin có đánh dấu sao (*) dưới đây. Trình duyệt sẽ tự động kiểm tra định dạng dữ liệu trước khi gửi phiếu:</p>
+      <p>Vui lòng điền đầy đủ các trường thông tin có đánh dấu sao (*) dưới đây. Hệ thống sẽ kiểm tra dữ liệu phía client trước khi gửi qua API:</p>
 
-      <form action="#" method="post" class="bieu-mau">
+      <!-- Khung hiển thị thông báo kết quả gửi biểu mẫu (aria-live="polite") -->
+      <div id="thong-bao-gui-form" class="thong-bao-ket-qua" aria-live="polite" style="display:none; margin-bottom: 16px;"></div>
+
+      <form action="#" method="post" class="bieu-mau" id="form-lien-he" novalidate>
         
         <fieldset>
           <legend>Thông tin cá nhân người liên hệ</legend>
@@ -61,22 +66,26 @@
           <div class="nhom-nhap-lieu">
             <label for="ho-ten">Họ và tên sinh viên / quý độc giả (*):</label>
             <input type="text" id="ho-ten" name="ho_ten" required minlength="3" maxlength="50" placeholder="Ví dụ: Nguyễn Văn An">
+            <span id="loi-ho_ten" class="thong-bao-loi-truong"></span>
           </div>
 
           <div class="nhom-nhap-lieu">
             <label for="ma-sinh-vien">Mã số sinh viên (nếu là sinh viên UED):</label>
             <input type="text" id="ma-sinh-vien" name="ma_sinh_vien" pattern="[0-9]{10}" placeholder="Gồm 10 chữ số, ví dụ: 3120224189">
+            <span id="loi-ma_sinh_vien" class="thong-bao-loi-truong"></span>
           </div>
 
           <div class="nhom-nhap-lieu--ngang">
             <div class="nhom-nhap-lieu">
               <label for="email-lien-he">Địa chỉ Email nhận phản hồi (*):</label>
               <input type="email" id="email-lien-he" name="email_lien_he" required placeholder="nhapemail@ued.udn.vn">
+              <span id="loi-email_lien_he" class="thong-bao-loi-truong"></span>
             </div>
 
             <div class="nhom-nhap-lieu">
               <label for="so-dien-thoai">Số điện thoại di động (*):</label>
               <input type="tel" id="so-dien-thoai" name="so_dien_thoai" required pattern="0[0-9]{9}" placeholder="Gồm 10 số bắt đầu bằng 0, ví dụ: 0905123456">
+              <span id="loi-so_dien_thoai" class="thong-bao-loi-truong"></span>
             </div>
           </div>
         </fieldset>
@@ -93,6 +102,7 @@
               <option value="ky-gui-sach">Đăng ký trao đổi, ký gửi giáo trình cũ</option>
               <option value="gop-y-phan-hoi">Góp ý nâng cao chất lượng dịch vụ website</option>
             </select>
+            <span id="loi-muc_dich" class="thong-bao-loi-truong"></span>
           </div>
 
           <div class="nhom-nhap-lieu">
@@ -111,16 +121,18 @@
           <div class="nhom-nhap-lieu">
             <label for="so-luong">Số lượng sách dự kiến mua (từ 1 đến 50 cuốn) (*):</label>
             <input type="number" id="so-luong" name="so_luong" min="1" max="50" value="1" required>
+            <span id="loi-so_luong" class="thong-bao-loi-truong"></span>
           </div>
 
           <div class="nhom-nhap-lieu">
             <label for="ghi-chu">Ghi chú thêm hoặc nội dung góp ý chi tiết:</label>
             <textarea id="ghi-chu" name="ghi_chu" rows="4" placeholder="Nhập địa chỉ nhận sách hoặc câu hỏi chi tiết của bạn tại đây..."></textarea>
+            <span id="loi-ghi_chu" class="thong-bao-loi-truong"></span>
           </div>
         </fieldset>
 
         <div style="display: flex; gap: var(--khoang-cach); flex-wrap: wrap;">
-          <button type="submit" class="nut nut--chinh">Gửi phiếu đăng ký thông tin</button>
+          <button type="submit" id="nut-gui-form" class="nut nut--chinh">Gửi phiếu đăng ký thông tin</button>
           <button type="reset" class="nut nut--vien">Nhập lại từ đầu</button>
         </div>
 
@@ -136,5 +148,8 @@
     </div>
   </footer>
 
+  <!-- Nạp các module JavaScript ES6+ (Chương 4) -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/trang-lien-he.js"></script>
 </body>
 </html>
