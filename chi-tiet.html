@@ -24,6 +24,7 @@
   <!-- Thanh điều hướng -->
   <nav class="thanh-dieu-huong" aria-label="Điều hướng chính">
     <div class="khung-chua">
+      <button class="nut-menu" id="nut-menu" aria-label="Mở menu điều hướng" aria-expanded="false">&#9776; Menu</button>
       <ul>
         <li><a href="index.html">Trang chủ</a></li>
         <li><a href="danh-sach.html">Danh mục sách</a></li>
@@ -31,12 +32,21 @@
         <li><a href="gioi-thieu.html">Giới thiệu nhóm</a></li>
         <li><a href="lien-he.html">Liên hệ đặt sách</a></li>
         <li><a href="danh-sach-bootstrap.html">Bản Bootstrap 5</a></li>
+        <li><a href="danh-sach.html#yeu-thich" class="nut-yeu-thich-nav">❤️ Yêu thích (<span class="so-luong-yeu-thich">0</span>)</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Vùng nội dung chính (Cột chính trong CSS Grid) -->
   <main class="noi-dung-chinh khung-chua">
+    <!-- Khung chi tiết động được nạp từ data/san-pham.json qua URLSearchParams (Chức năng 3) -->
+    <div id="chi-tiet-dong"></div>
+
+    <!-- Progressive Enhancement: Hiển thị nội dung tĩnh dự phòng khi người dùng tắt JavaScript -->
+    <noscript>
+    <div class="hop-chu-y">
+      <p><strong>Thông báo dự phòng (Progressive Enhancement):</strong> Trình duyệt của bạn đang tắt JavaScript. Dưới đây là thông tin chi tiết tĩnh của cuốn sách tiêu biểu.</p>
+    </div>
     <h1>Thông tin chi tiết giáo trình chuyên ngành</h1>
 
     <article>
@@ -146,6 +156,7 @@
         <p><a href="danh-sach.html">&larr; Quay lại danh mục tất cả giáo trình</a></p>
       </section>
     </article>
+    </noscript>
   </main>
 
   <!-- Cột phụ Aside (Bắt buộc theo Bảng 1: CSS Grid 2 cột ở desktop, 1 cột ở mobile) -->
@@ -193,5 +204,8 @@
     </div>
   </footer>
 
+  <!-- Nạp các module JavaScript ES6+ (Chương 4) -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/trang-chi-tiet.js"></script>
 </body>
 </html>
