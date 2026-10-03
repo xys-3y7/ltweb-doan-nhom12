@@ -22,6 +22,7 @@
 
   <nav class="thanh-dieu-huong" aria-label="Điều hướng chính">
     <div class="khung-chua">
+      <button class="nut-menu" id="nut-menu" aria-label="Mở menu điều hướng" aria-expanded="false">&#9776; Menu</button>
       <ul>
         <li><a href="index.html">Trang chủ</a></li>
         <li><a href="danh-sach.html">Danh mục sách</a></li>
@@ -29,6 +30,7 @@
         <li><a href="gioi-thieu.html" class="hien-tai" aria-current="page">Giới thiệu nhóm</a></li>
         <li><a href="lien-he.html">Liên hệ đặt sách</a></li>
         <li><a href="danh-sach-bootstrap.html">Bản Bootstrap 5</a></li>
+        <li><a href="danh-sach.html#yeu-thich" class="nut-yeu-thich-nav">❤️ Yêu thích (<span class="so-luong-yeu-thich">0</span>)</a></li>
       </ul>
     </div>
   </nav>
@@ -59,7 +61,7 @@
         <!-- Thành viên 1 -->
         <article class="the-thanh-vien">
           <figure>
-            <img src="images/yoi-avatar.jpg" alt="Ảnh chân dung sinh viên Xaiyasith Yoi" width="120" height="120" loading="lazy">
+            <img src="images/yoi-avatar.png" alt="Ảnh chân dung sinh viên Xaiyasith Yoi" width="120" height="120" loading="lazy">
             <figcaption><strong>Xaiyasith Yoi</strong><br><small>MSV: 3120224189</small></figcaption>
           </figure>
           <p><span class="huy-hieu huy-hieu--thanh-cong">Nhóm trưởng</span></p>
@@ -70,18 +72,18 @@
         <!-- Thành viên 2 -->
         <article class="the-thanh-vien">
           <figure>
-            <img src="images/haysady-avatar.jpg" alt="Ảnh chân dung sinh viên Phommaket Haysady" width="120" height="120" loading="lazy">
-            <figcaption><strong>Phommaket Haysady</strong><br><small>MSV: 3120224181</small></figcaption>
+            <img src="images/hatsady-avatar.png" alt="Ảnh chân dung sinh viên Phommaket Hatsady" width="120" height="120" loading="lazy">
+            <figcaption><strong>Phommaket Hatsady</strong><br><small>MSV: 3120224181</small></figcaption>
           </figure>
           <p><span class="huy-hieu huy-hieu--thanh-cong">Thành viên</span></p>
           <p class="the__mo-ta">Thiết kế lưới danh mục <code>danh-sach.html</code>, bản <code>danh-sach-bootstrap.html</code>, bảng dữ liệu responsive.</p>
-          <a href="thanhvien/3120224181_haysady/gioithieu.html" class="nut nut--chinh">Xem hồ sơ &amp; TKB &rarr;</a>
+          <a href="thanhvien/3120224181_hatsady/gioithieu.html" class="nut nut--chinh">Xem hồ sơ &amp; TKB &rarr;</a>
         </article>
 
         <!-- Thành viên 3 -->
         <article class="the-thanh-vien">
           <figure>
-            <img src="images/sauphasith-avatar.jpg" alt="Ảnh chân dung sinh viên Vongsena Sauphasith" width="120" height="120" loading="lazy">
+            <img src="images/sauphasith-avatar.png" alt="Ảnh chân dung sinh viên Vongsena Sauphasith" width="120" height="120" loading="lazy">
             <figcaption><strong>Vongsena Sauphasith</strong><br><small>MSV: 3120224186</small></figcaption>
           </figure>
           <p><span class="huy-hieu huy-hieu--thanh-cong">Thành viên</span></p>
@@ -124,5 +126,7 @@
     </div>
   </footer>
 
+  <!-- Nạp module JavaScript chính (Chương 4) -->
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
