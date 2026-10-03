@@ -18,7 +18,7 @@
 
 - **Kho GitHub của nhóm:** `https://github.com/xys-3y7/ltweb-doan-nhom12`
 - **Địa chỉ website xem trực tiếp (GitHub Pages):** `https://xys-3y7.github.io/ltweb-doan-nhom12/`
-- **Mã commit kiểm tra (Last Commit SHA):** `ce55ea7d7f70e8a7c243b23688eb595e3710e987`
+- **Mã commit kiểm tra (Last Commit SHA):** `8f816654c089434b04b4869beb62a209edc87ebf`
 - **Thời gian hoàn thành kiểm chuẩn:** Tháng 09/2026 (Trước buổi thực hành Tuần 7)
 
 ---
